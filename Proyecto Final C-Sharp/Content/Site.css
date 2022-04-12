@@ -1,4 +1,6 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/hk-grotesk.min.css");
+
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -28,4 +30,54 @@ textarea {
     .body-content {
         padding: 0;
     }
+}
+
+.logoPrincipal {
+    margin-top: 60px;
+    margin-left: 80px;
+    height: 80px;
+    width: 80px;
+}
+
+.tituloPrincipal {
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: bold;
+    margin-left: 80px;
+    color: white;
+    font-size: 70px;
+}
+
+.eslogan {
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: 500;
+    margin-left: 80px;
+    color: white;
+    font-size: 30px;
+}
+
+.botonesPrincipal {
+    margin-top: 300px;
+}
+
+#btnRegistro {
+    background-color: black;
+    color: white;
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: bold;
+    height: 45px;
+    width: 140px;
+    margin-left: 80px;
+}
+
+#btnEntrar {
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: bold;
+    height: 45px;
+    width: 140px;
+    margin-left: 20px;
+}
+
+.bodyPrincipal {
+    background-image: url("/Imagenes/fondoPantalla.jpg");
+    background-size: cover;
 }
