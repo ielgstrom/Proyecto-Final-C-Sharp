@@ -1,17 +1,83 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="Proyecto_Final_C_Sharp.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+    <style>
+      .contact {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* opacity: 0.5; */
+}
 
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
+    .contact::before {
+        content: "";
+        background-image: url("/Imagenes/contact.jpg");
+        background-color: red;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.25;
+        z-index: -1;
+    }
+
+.elemCenter2 {
+    padding-left: 60px;
+    border-left-style: solid;
+    border-left-color: gray;
+    border-left-width: 2px;
+    opacity: 1;
+}
+
+.elemCenter {
+    margin-right: px;
+    opacity: 1;
+}
+    </style>
+     <div class="container-fluid contact">
+        <div class="row  m-5">
+            <div class="col-md-5 elemCenter">
+                <div class="row">
+                    <h2 class="col-md-12 text-center">Contacto</h2>
+                    <form>
+                        <div class="form-group mb-3">
+                          <label for="Name">Nombre</label>
+                          <input type="text" class="form-control" id="Name">
+                        </div>
+                        <div class="form-group mb-3">
+                          <label for="mail">Correo</label>
+                          <input type="email" class="form-control" id="mail" >
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlTextarea1">Descripcion</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class=" col-12 mt-3 btn btn-primary">Enviar</button>
+                      </form>
+                </div>
+            </div>
+  
+            <div class="col-md-5 elemCenter2">
+                <div class="row">
+                    <h2 class="my-4 col-md-12 text-center">Nuestros datos de contacto</h2>
+                    <h3 class="col-md-12 text-left">Mail de centro</h3>
+                    <p>Carrer d'En Llàstics, 2, 08003 Barcelona</p>
+                    <h3 class="col-md-12 text-left">Dirección</h3>
+                    <p>i.elgstrom@gmail.com</p>
+                    <h3 class="col-md-12 text-left">Teléfono</h3>
+                    <p>(+34) 671-408-611</p>
+                </div>
+            </div>
+        </div>
+    </div>    
 </asp:Content>
