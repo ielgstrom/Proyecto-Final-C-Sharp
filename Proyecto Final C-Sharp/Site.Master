@@ -54,8 +54,13 @@
                         LEARNIFY
                     </a>
                 </div>
+
                 <div class="navbar-collapse collapse" style="">
                     <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <input type="text" class="form-control" placeholder="Buscar" style="margin-top: 13px; background:rgba(255, 255, 255, 0.8); height: 25px">
+
+                        </li>
                         <li><a runat="server" href="~/About.aspx">Sobre nosotros</a></li>
                         <li><a runat="server" href="~/Contact.aspx">Contacto</a></li>
                     </ul>
