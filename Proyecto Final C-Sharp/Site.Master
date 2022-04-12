@@ -22,9 +22,9 @@
 </head>
 <body>
             <style>
-                     .container-fluid::before{
-    display:block !important;
-}
+                .container-fluid::before{
+                    display:block !important;
+                }
             </style>
     <form runat="server">
         <asp:ScriptManager runat="server">
