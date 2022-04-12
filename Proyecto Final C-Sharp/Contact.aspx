@@ -6,22 +6,22 @@
     margin-top: auto;
     margin-bottom: auto;
     width: 100%;
-    height: 80vh;
+    height: 91.6vh;
     position: relative;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+
     /* opacity: 0.5; */
 }
 
     .contact::before {
         content: "";
         background-image: url("/Imagenes/contact.jpg");
-        background-color: red;
-        background-size: auto;
+        background-size: auto !important;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover !important;
         position: absolute;
         top: 0px;
         right: 0px;
@@ -40,7 +40,7 @@
 }
 
 .elemCenter {
-    margin-right: px;
+    margin-right: 40px;
     opacity: 1;
 }
     </style>
@@ -67,7 +67,7 @@
                 </div>
             </div>
   
-            <div class="col-md-5 elemCenter2">
+            <div class="col-md-6 elemCenter2">
                 <div class="row">
                     <h2 class="my-4 col-md-12 text-center">Nuestros datos de contacto</h2>
                     <h3 class="col-md-12 text-left">Mail de centro</h3>
