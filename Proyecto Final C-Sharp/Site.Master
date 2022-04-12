@@ -15,6 +15,7 @@
 
     <webopt:bundlereference runat="server" path="~/Content" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <%--<link rel="<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--%>
     <%--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--%>
     <%--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">--%>
@@ -56,12 +57,11 @@
                         LEARNIFY
                     </a>
                 </div>
-
-                <div class="navbar-collapse collapse" style="">
+                <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <input type="text" class="form-control" placeholder="Buscar" style="margin-top: 13px; background:rgba(255, 255, 255, 0.8); height: 25px">
-
+                        <li class="input-icons">
+                            <i class="fa fa-search icon"></i>
+                            <input type="text" class="form-control input-field" placeholder="Buscar" style="">
                         </li>
                         <li><a runat="server" href="~/About.aspx">Sobre nosotros</a></li>
                         <li><a runat="server" href="~/Contact.aspx">Contacto</a></li>

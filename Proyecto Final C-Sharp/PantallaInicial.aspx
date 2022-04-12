@@ -54,8 +54,8 @@
             <label class="eslogan">LEARN FROM YOUR HOME, EVERYWHERE</label>
         </div>
         <div class="botonesPrincipal">
-            <button type="button" class="btn btn-dark" id="btnRegistro">REGISTRO</button>
-            <button type="button" class="btn btn-primary" id="btnEntrar">ENTRAR</button>
+            <button type="button" class="btn btn-dark" id="btnRegistro" onclick="/Registro.aspx">REGISTRO</button>
+            <button type="button" class="btn btn-primary" id="btnEntrar" onclick="/Login.aspx">ENTRAR</button>
         </div>
     </form>
 </body>

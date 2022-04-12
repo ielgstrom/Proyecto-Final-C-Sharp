@@ -2,7 +2,7 @@
 
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
 }
 
 /* Wrapping element */
@@ -30,6 +30,8 @@ textarea {
         padding: 0;
     }
 }
+
+/*Pagina principal styles*/
 
 .logoPrincipal {
     margin-top: 60px;
@@ -80,3 +82,26 @@ textarea {
     background-image: url("/Imagenes/fondoPantalla.jpg");
     background-size: cover;
 }
+
+/*End pagina principal styles*/
+
+/*Site Master styles*/
+
+.input-icons i {
+    position: absolute;
+}
+
+.icon {
+    padding: 10px;
+    min-width: 40px;
+    margin-top: 8px;
+}
+
+.input-field {
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    height: 30px;
+}
+
+/*End Site Master styles*/
