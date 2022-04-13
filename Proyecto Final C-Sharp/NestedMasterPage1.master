@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NestedMasterPage1.master.cs" Inherits="Proyecto_Final_C_Sharp.NestedMasterPage1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
-        .sidenav {
+.sidenav {
   height: 100%;
   width: 180px;
   position: fixed;
@@ -13,42 +13,48 @@
   overflow-x: hidden;
   padding-top: 60px;
 }
-        .main {
+.main {
   padding-left: 180px; /* Same as the width of the sidenav */
   height: calc(100vh - 50px);
   /*background-color:blue;*/
   opacity:1;
   
 }
-       .main::before{
-background-image: url("Imagenes/background.jpg");
-           content:" ";
-           display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-opacity: 0.4;
-       }
-        .sidenav a {
+.main::before{
+    background-image: url("Imagenes/background.jpg");
+    content:" ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+.sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
   opacity: 1;
+  text-align:center;
+}
+.downLink{
+    position: relative;
+    top: calc(100% - 200px);
+}
+a:hover{
+    color:white;
 }
     </style>
-   <div class="sidenav">
-    <a >Inicio</a>
-    <a >Lista Me gusta</a>
-    <a >Foros</a>
-    <a >Perfil</a>
+    <div class="sidenav">
+        <a class="upLink" href="MainPage.aspx">Inicio</a>
+        <a class="upLink">Me gusta</a>
+        <a class="upLink">Foros</a>
+        <a class="downLink">Perfil</a>
    </div>
    <div class="main">
-    <asp:ContentPlaceHolder ID="ChildContent2" runat="server">
-
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ChildContent2" runat="server"/>
    </div>
 </asp:Content>
