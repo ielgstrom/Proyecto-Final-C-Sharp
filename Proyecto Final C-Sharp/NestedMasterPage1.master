@@ -63,6 +63,13 @@ a.forosLinks{
     border-bottom-color: #ffffff3d;
     border-bottom-style: solid;
 }
+
+.content{
+    position:absolute;
+    padding: 0px 20px;
+    
+}
+
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -98,6 +105,9 @@ a.forosLinks{
         <a class="downLink"  href="Perfil.aspx">Perfil</a>
    </div>
    <div class="main">
+       <div class="content">
+
     <asp:ContentPlaceHolder ID="ChildContent2" runat="server"/>
+       </div>
    </div>
 </asp:Content>
