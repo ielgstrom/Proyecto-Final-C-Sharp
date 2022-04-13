@@ -112,7 +112,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="CSSapp\RegistroLogin.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -128,6 +127,13 @@
     <Content Include="MainPage.aspx" />
     <Content Include="NestedMasterPage1.master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Imagenes\BG.jpg" />
+    <Content Include="Imagenes\fb.png" />
+    <Content Include="Imagenes\fotoIniciar.jpg" />
+    <Content Include="Imagenes\google.png" />
+    <Content Include="Imagenes\logoLernify.png" />
+    <Content Include="Imagenes\logoNegro.png" />
+    <Content Include="LoginPage.aspx" />
     <Content Include="PantallaInicial.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -191,20 +197,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.aspx.cs">
-      <DependentUpon>MainPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MainPage.aspx.designer.cs">
-      <DependentUpon>MainPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NestedMasterPage1.master.cs">
-      <DependentUpon>NestedMasterPage1.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NestedMasterPage1.master.designer.cs">
-      <DependentUpon>NestedMasterPage1.master</DependentUpon>
-    </Compile>
+	  <Compile Include="MainPage.aspx.cs">
+		  <DependentUpon>MainPage.aspx</DependentUpon>
+		  <SubType>ASPXCodeBehind</SubType>
+	  </Compile>
+	  <Compile Include="MainPage.aspx.designer.cs">
+		  <DependentUpon>MainPage.aspx</DependentUpon>
+	  </Compile>
+	  <Compile Include="NestedMasterPage1.master.cs">
+		  <DependentUpon>NestedMasterPage1.master</DependentUpon>
+		  <SubType>ASPXCodeBehind</SubType>
+	  </Compile>
+	  <Compile Include="NestedMasterPage1.master.designer.cs">
+		  <DependentUpon>NestedMasterPage1.master</DependentUpon>
+	  </Compile>
+	  <Compile Include="LoginPage.aspx.cs">
+		  <DependentUpon>LoginPage.aspx</DependentUpon>
+		  <SubType>ASPXCodeBehind</SubType>
+	  </Compile>
+	  <Compile Include="LoginPage.aspx.designer.cs">
+		  <DependentUpon>LoginPage.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="PantallaInicial.aspx.cs">
       <DependentUpon>PantallaInicial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
