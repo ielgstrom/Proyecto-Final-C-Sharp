@@ -11,7 +11,7 @@ namespace Proyecto_Final_C_Sharp
 {
 
 
-    public partial class _Default
+    public partial class WebForm1
     {
     }
 }
