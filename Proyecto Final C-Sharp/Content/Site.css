@@ -65,7 +65,7 @@ textarea {
     color: white;
     font-family: 'HK Grotesk', sans-serif;
     font-weight: bold;
-    height: 45px;
+    height: 35px;
     width: 140px;
     margin-left: 80px;
 }
@@ -73,7 +73,7 @@ textarea {
 #btnEntrar {
     font-family: 'HK Grotesk', sans-serif;
     font-weight: bold;
-    height: 45px;
+    height: 35px;
     width: 140px;
     margin-left: 20px;
 }
@@ -105,3 +105,9 @@ textarea {
 }
 
 /*End Site Master styles*/
+
+/*Login and Register*/
+
+
+
+/*End login and register*/
