@@ -50,9 +50,9 @@ a:hover{
     </style>
     <div class="sidenav">
         <a class="upLink" href="MainPage.aspx">Inicio</a>
-        <a class="upLink">Me gusta</a>
+        <a class="upLink" href="LikedList.aspx">Me gusta</a>
         <a class="upLink">Foros</a>
-        <a class="downLink">Perfil</a>
+        <a class="downLink"  href="Perfil.aspx">Perfil</a>
    </div>
    <div class="main">
     <asp:ContentPlaceHolder ID="ChildContent2" runat="server"/>
