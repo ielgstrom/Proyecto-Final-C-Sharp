@@ -41,17 +41,60 @@
   text-align:center;
 }
 .downLink{
-    position: relative;
-    top: calc(100% - 200px);
+    position: absolute;
+    top: calc(100% - 60px);
 }
 a:hover{
     color:white;
 }
+a.forosLinks{
+    font-size:18px;
+}
+.listForos{
+    position: relative;
+    top:0;
+    left:0;
+    overflow-y:auto;
+    max-height: 370px;   
+    
+}
+.likedlist{
+    border-bottom: 2px;
+    border-bottom-color: #ffffff3d;
+    border-bottom-style: solid;
+}
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f100;
+            
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
     </style>
     <div class="sidenav">
         <a class="upLink" href="MainPage.aspx">Inicio</a>
-        <a class="upLink" href="LikedList.aspx">Me gusta</a>
-        <a class="upLink">Foros</a>
+        <a class="upLink likedlist" href="LikedList.aspx">Me gusta</a>
+        <br />
+        <div class="listForos">
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+        <a class="forosLinks">Foros</a>
+
+            </div>
         <a class="downLink"  href="Perfil.aspx">Perfil</a>
    </div>
    <div class="main">
