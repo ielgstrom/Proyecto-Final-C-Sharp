@@ -199,27 +199,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-	  <Compile Include="MainPage.aspx.cs">
-		  <DependentUpon>MainPage.aspx</DependentUpon>
-		  <SubType>ASPXCodeBehind</SubType>
-	  </Compile>
-	  <Compile Include="MainPage.aspx.designer.cs">
-		  <DependentUpon>MainPage.aspx</DependentUpon>
-	  </Compile>
-	  <Compile Include="NestedMasterPage1.master.cs">
-		  <DependentUpon>NestedMasterPage1.master</DependentUpon>
-		  <SubType>ASPXCodeBehind</SubType>
-	  </Compile>
-	  <Compile Include="NestedMasterPage1.master.designer.cs">
-		  <DependentUpon>NestedMasterPage1.master</DependentUpon>
-	  </Compile>
-	  <Compile Include="LoginPage.aspx.cs">
-		  <DependentUpon>LoginPage.aspx</DependentUpon>
-		  <SubType>ASPXCodeBehind</SubType>
-	  </Compile>
-	  <Compile Include="LoginPage.aspx.designer.cs">
-		  <DependentUpon>LoginPage.aspx</DependentUpon>
-	  </Compile>
+    <Compile Include="MainPage.aspx.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainPage.aspx.designer.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="NestedMasterPage1.master.cs">
+      <DependentUpon>NestedMasterPage1.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NestedMasterPage1.master.designer.cs">
+      <DependentUpon>NestedMasterPage1.master</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Model\User.cs" />
     <Compile Include="PantallaInicial.aspx.cs">
       <DependentUpon>PantallaInicial.aspx</DependentUpon>

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Proyecto_Final_C_Sharp.DAL;
 
 namespace Proyecto_Final_C_Sharp.Model
 {

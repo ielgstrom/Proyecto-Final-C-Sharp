@@ -35,7 +35,8 @@ namespace Proyecto_Final_C_Sharp.DAL
             pFirstName.Value = values[3];
 
             SqlParameter pLastName = new SqlParameter("@pLastName", System.Data.SqlDbType.NVarChar, 50);
-            pLastName.Value = values[4];
+            if (values[4] == null) pLastName.Value = DBNull.Value;
+            else pLastName.Value = values[4];
 
             //Add sql parameters
             command.Parameters.Add(pEmail);
@@ -103,7 +104,8 @@ namespace Proyecto_Final_C_Sharp.DAL
             pFirstName.Value = values[2];
 
             SqlParameter pLastName = new SqlParameter("@pLastName", System.Data.SqlDbType.NVarChar, 50);
-            pLastName.Value = values[3];
+            if (values[3] == null) pLastName.Value = DBNull.Value;
+            else pLastName.Value = values[3];
 
             //Add sql parameters
             command.Parameters.Add(pEmail);
