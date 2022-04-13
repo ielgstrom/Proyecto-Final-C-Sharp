@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NestedMasterPage1.master.cs" Inherits="Proyecto_Final_C_Sharp.NestedMasterPage1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+        .sidenav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0.95;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+        .main {
+  padding-left: 180px; /* Same as the width of the sidenav */
+  height: calc(100vh - 50px);
+  /*background-color:blue;*/
+  opacity:1;
+  
+}
+       .main::before{
+background-image: url("Imagenes/background.jpg");
+           content:" ";
+           display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+opacity: 0.4;
+       }
+        .sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  opacity: 1;
+}
+    </style>
+   <div class="sidenav">
+    <a >Inicio</a>
+    <a >Lista Me gusta</a>
+    <a >Foros</a>
+    <a >Perfil</a>
+   </div>
+   <div class="main">
+    <asp:ContentPlaceHolder ID="ChildContent2" runat="server">
+
+    </asp:ContentPlaceHolder>
+   </div>
+</asp:Content>
