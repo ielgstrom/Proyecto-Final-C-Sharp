@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<webopt:bundlereference runat="server" path="~/Content" />
     <title></title>
     <style>
         body, html {
@@ -15,53 +16,36 @@
           margin: 0;
           padding: 0;
         }
-
-        .contenedorLogin {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            height: 100%;
-            background-image: url(Imagenes/fondoPantalla.jpg);
-            background-size: cover;
-        }
-
-        .elementoLogin {
-            background: #666;
-            height: 85%;
-            width: 70%;
-        }
-
-        .columna1 {
-            width: 50%;
-            float: left;
-            background: linear-gradient(to right, navy, steelblue);
-            height: 100%;
-        }
-
-        .columna2 {
-            width: 50%;
-            float: right;
-            height: 100%;
-            background-color: white;
-        }
-
-        #imgLogin {
-            position: absolute;
-            margin: auto;
-            top: 0;
-            left: 24%;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-    <div class="contenedorLogin">
+     <div class="contenedorLogin">
       <div class="elementoLogin">
           <div class="columna1">
-                <img src="Imagenes/logoLernify.png" id="imgLogin" alt="Learnify" width="300" height="300"/>
+              <label id="tituloLogin">LEARNIFY</label>
+              <img src="Imagenes/logoLernify.png" id="imgLogin" alt="Learnify" width="200" height="200"/>
           </div>
           <div class="columna2">
-              
+            <div class="tituloSignIn">
+                <label id="textoSignIn">INICIAR SESIÓN</label>
+                <br />
+                <hr />
+            </div>
+            <form class="formRegistro">
+              <div class="form-group">
+                <label for="inputEmail">Correo electrónico</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="correo@gmail.com"/>
+              </div>
+              <div class="form-group">
+                <label for="inputContra">Contraseña</label>
+                <input type="password" class="form-control" aria-describedby="contraHelp" id="inputContra" placeholder="**********"/>
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+                <label class="form-check-label" for="connected">Recuerdame</label>
+              </div>
+              <button id="btSignIn" type="submit" class="btn btn-primary">INICIAR SESIÓN</button>
+            </form>
           </div>
       </div>
     </div>

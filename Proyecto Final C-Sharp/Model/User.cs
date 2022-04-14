@@ -13,10 +13,7 @@ namespace Proyecto_Final_C_Sharp.Model
         private string email, username, password, firstName, lastName;
 
         //Constructors
-        public User()
-        {
-
-        }
+        public User() { }
         public User(string Email, string Username, string Password, string FirstName, string LastName)
         {
             email = Email;
