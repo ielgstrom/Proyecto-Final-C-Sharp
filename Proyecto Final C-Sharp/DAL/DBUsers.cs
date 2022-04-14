@@ -35,7 +35,8 @@ namespace Proyecto_Final_C_Sharp.DAL
             pFirstName.Value = values[3];
 
             SqlParameter pLastName = new SqlParameter("@pLastName", System.Data.SqlDbType.NVarChar, 50);
-            pLastName.Value = values[4];
+            if (values[4] == null) pLastName.Value = DBNull.Value;
+            else pLastName.Value = values[4];
 
             //Add sql parameters
             command.Parameters.Add(pEmail);
@@ -103,7 +104,8 @@ namespace Proyecto_Final_C_Sharp.DAL
             pFirstName.Value = values[2];
 
             SqlParameter pLastName = new SqlParameter("@pLastName", System.Data.SqlDbType.NVarChar, 50);
-            pLastName.Value = values[3];
+            if (values[3] == null) pLastName.Value = DBNull.Value;
+            else pLastName.Value = values[3];
 
             //Add sql parameters
             command.Parameters.Add(pEmail);
@@ -140,6 +142,23 @@ namespace Proyecto_Final_C_Sharp.DAL
             SqlParameter pUsername = new SqlParameter("@pLength", System.Data.SqlDbType.Int);
             pUsername.Value = length;
             command.Parameters.Add(pUsername);
+
+            SqlDataReader reader = command.ExecuteReader();
+            return reader;
+        }
+
+        //FIND
+        //Returns the user with the specified PK
+        public static SqlDataReader Find(SqlConnection connection, string PrimaryKey)
+        {
+            //Create the query and the sql command
+            string query = "RETURN * FROM Users WHERE email = @pEmail";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            //Create and add parameter
+            SqlParameter pEmail = new SqlParameter("@pEmail", System.Data.SqlDbType.NVarChar, 320);
+            pEmail.Value = PrimaryKey;
+            command.Parameters.Add(pEmail);
 
             SqlDataReader reader = command.ExecuteReader();
             return reader;
