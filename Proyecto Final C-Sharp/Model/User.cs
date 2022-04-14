@@ -13,6 +13,10 @@ namespace Proyecto_Final_C_Sharp.Model
         private string email, username, password, firstName, lastName;
 
         //Constructors
+        public User()
+        {
+
+        }
         public User(string Email, string Username, string Password, string FirstName, string LastName)
         {
             email = Email;
@@ -59,7 +63,7 @@ namespace Proyecto_Final_C_Sharp.Model
 
         //Read
         //Returns a list of users from the DB
-        public static List<User> Read(SqlConnection connection)
+        public List<User> Read(SqlConnection connection)
         {
             List<User> users = new List<User>();
             SqlDataReader reader = DBUsers.Read(connection);
@@ -84,7 +88,7 @@ namespace Proyecto_Final_C_Sharp.Model
         //Find
         //Returns the user with the specified email
         //Returns null if not found
-        public static User Find(SqlConnection connection, string primaryKey)
+        public User Find(SqlConnection connection, string primaryKey)
         {
             User user = null;
 
