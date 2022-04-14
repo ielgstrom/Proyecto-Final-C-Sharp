@@ -26,7 +26,6 @@
               <img src="Imagenes/logoLernify.png" id="imgLogin" alt="Learnify" width="200" height="200"/>
           </div>
           <div class="columna2">
-
             <div class="tituloSignIn">
                 <label id="textoSignIn">INICIAR SESIÓN</label>
                 <br />
