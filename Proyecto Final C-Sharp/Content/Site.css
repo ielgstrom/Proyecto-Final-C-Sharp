@@ -186,7 +186,7 @@ textarea {
 
 #mensajeError {
     color: red;
-    margin-left: 13%;
+    vertical-align: middle;
 }
 
 /*End register style*/

@@ -57,7 +57,7 @@ namespace Proyecto_Final_C_Sharp
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inputNombre;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputNombre;
 
         /// <summary>
         /// Control inputNombreUsuario.
@@ -66,7 +66,7 @@ namespace Proyecto_Final_C_Sharp
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inputNombreUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputNombreUsuario;
 
         /// <summary>
         /// Control inputEmail.
