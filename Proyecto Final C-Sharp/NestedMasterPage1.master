@@ -72,6 +72,7 @@ a.forosLinks{
     padding: 0px 20px;
     overflow:auto; 
     z-index:1;
+    width:calc(100% - 180px);
 }
         ::-webkit-scrollbar {
             width: 10px;
@@ -89,20 +90,20 @@ a.forosLinks{
         <a class="upLink likedlist" href="LikedList.aspx">Me gusta</a>
         <br />
         <div class="listForos">
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
+        <a class="forosLinks" href="Foro.aspx">Foros</a>
+        <a class="forosLinks" href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
 
             </div>
         <a class="downLink"  href="Perfil.aspx">Perfil</a>
