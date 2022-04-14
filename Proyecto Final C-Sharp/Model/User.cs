@@ -82,6 +82,8 @@ namespace Proyecto_Final_C_Sharp.Model
                 users.Add(user);
             }
 
+            reader.Close();
+
             return users;
         }
 
@@ -104,6 +106,7 @@ namespace Proyecto_Final_C_Sharp.Model
                 else nLastName = (string)reader["lastName"];
                 user = new User(nEmail, nUsername, nPassword, nFirstName, nLastName);
             }
+            reader.Close();
 
             return user;
         }

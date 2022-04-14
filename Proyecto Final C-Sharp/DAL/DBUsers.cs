@@ -124,7 +124,7 @@ namespace Proyecto_Final_C_Sharp.DAL
         //Reads all rows from users
         public static SqlDataReader Read(SqlConnection connection)
         {
-            string query = "RETURN * FROM Users";
+            string query = "SELECT * FROM Users";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
             return reader;

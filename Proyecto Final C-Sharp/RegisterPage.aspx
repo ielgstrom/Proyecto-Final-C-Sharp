@@ -40,15 +40,15 @@
             <form runat="server" class="formRegistro">
               <div class="form-group">
                 <label runat="server" for="inputNombre">Nombre completo</label>
-                <input runat="server" type="email" class="form-control" id="inputNombre" aria-describedby="errorNombre" placeholder="Nombre Apellido"/>
+                <input runat="server" type="text" class="form-control" id="inputNombre" placeholder="Nombre y Apellido"/>
               </div>
               <div class="form-group">
                 <label runat="server" for="inputNombreUsuario">Nombre de Usuario</label>
-                <input runat="server" type="email" class="form-control" id="inputNombreUsuario" aria-describedby="errorNombreUsuario" placeholder="Nombre Usuario"/>
+                <input runat="server" type="text" class="form-control" id="inputNombreUsuario" placeholder="Nombre Usuario"/>
               </div>
               <div class="form-group">
                 <label runat="server" for="inputEmail">Correo electrónico</label>
-                <input runat="server" type="email" class="form-control" id="inputEmail" aria-describedby="errorEmail" placeholder="correo@gmail.com"/>
+                <input runat="server" type="email" class="form-control" id="inputEmail"  placeholder="correo@gmail.com"/>
               </div>
               <div class="form-group">
                 <label runat="server" for="inputContra">Contraseña</label>
