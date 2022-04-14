@@ -219,6 +219,7 @@
     </Compile>
     <Compile Include="Model\Playlist.cs" />
     <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\Seguridad.cs" />
     <Compile Include="NestedMasterPage1.master.cs">
       <DependentUpon>NestedMasterPage1.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
