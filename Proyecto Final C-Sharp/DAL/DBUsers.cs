@@ -147,6 +147,23 @@ namespace Proyecto_Final_C_Sharp.DAL
             return reader;
         }
 
+        //FIND
+        //Returns the user with the specified PK
+        public static SqlDataReader Find(SqlConnection connection, string PrimaryKey)
+        {
+            //Create the query and the sql command
+            string query = "RETURN * FROM Users WHERE email = @pEmail";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            //Create and add parameter
+            SqlParameter pEmail = new SqlParameter("@pEmail", System.Data.SqlDbType.NVarChar, 320);
+            pEmail.Value = PrimaryKey;
+            command.Parameters.Add(pEmail);
+
+            SqlDataReader reader = command.ExecuteReader();
+            return reader;
+        }
+
 
     }
 }
