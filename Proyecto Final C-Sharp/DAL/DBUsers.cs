@@ -124,7 +124,7 @@ namespace Proyecto_Final_C_Sharp.DAL
         //Reads all rows from users
         public static SqlDataReader Read(SqlConnection connection)
         {
-            string query = "RETURN * FROM Users";
+            string query = "SELECT * FROM Users";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
             return reader;
@@ -135,7 +135,7 @@ namespace Proyecto_Final_C_Sharp.DAL
         public static SqlDataReader Read(SqlConnection connection, int length)
         {
             //Create the query and the sql command
-            string query = "RETURN TOP @pLength FROM Users";
+            string query = "SELECT TOP @pLength FROM Users";
             SqlCommand command = new SqlCommand(query, connection);
 
             //Create and add parameter
@@ -152,7 +152,7 @@ namespace Proyecto_Final_C_Sharp.DAL
         public static SqlDataReader Find(SqlConnection connection, string PrimaryKey)
         {
             //Create the query and the sql command
-            string query = "RETURN * FROM Users WHERE email = @pEmail";
+            string query = "SELECT * FROM Users WHERE email = @pEmail";
             SqlCommand command = new SqlCommand(query, connection);
 
             //Create and add parameter
