@@ -13,5 +13,19 @@ namespace Proyecto_Final_C_Sharp
         {
 
         }
+
+        protected void ButtonJoin_Click(object sender, EventArgs e)
+        {
+            if (ButtonJoin.Text == "Unirse")
+            {
+                ButtonJoin.Text = "Salir";
+                InputForo.Enabled = true;
+            }
+            else if (ButtonJoin.Text == "Salir")
+            {
+                ButtonJoin.Text = "Unirse";
+                InputForo.Enabled = false;
+            }
+        }
     }
 }
