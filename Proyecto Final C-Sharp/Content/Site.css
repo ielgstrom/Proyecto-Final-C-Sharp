@@ -190,3 +190,28 @@ textarea {
 }
 
 /*End register style*/
+
+/*Login style*/
+
+#formLogin {
+    margin-left: 120px;
+    margin-top: 100px;
+}
+
+#btSignIn {
+    margin-left: 20%;
+    background-color: #0040ff;
+    color: white;
+    height: 30px;
+}
+
+.tituloSignIn {
+    text-align: center;
+    margin-top: 7%;
+}
+
+#textoSignIn {
+    font-size: 25px;
+    color: #337ab7;
+}
+/*End login style*/
