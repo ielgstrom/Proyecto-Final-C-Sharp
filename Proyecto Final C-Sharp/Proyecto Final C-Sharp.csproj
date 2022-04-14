@@ -124,6 +124,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Imagenes\icons8-pause-60.png" />
+    <Content Include="Imagenes\icons8-play-60.png" />
     <Content Include="MainPage.aspx" />
     <Content Include="NestedMasterPage1.master" />
     <Content Include="LikedList.aspx" />
