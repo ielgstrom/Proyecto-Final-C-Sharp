@@ -52,17 +52,17 @@
                     <form>
                         <div class="form-group mb-3">
                           <label for="Name">Nombre</label>
-                          <input type="text" class="form-control" id="Name">
+                          <input runat="server" type="text" class="form-control" id="Name">
                         </div>
                         <div class="form-group mb-3">
                           <label for="mail">Correo</label>
-                          <input type="email" class="form-control" id="mail" >
+                          <input runat="server" type="email" class="form-control" id="mail" >
                         </div>
                         <div class="form-group mb-3">
-                            <label for="exampleFormControlTextarea1">Descripcion</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="txtDesc">Descripcion</label>
+                            <textarea runat="server" class="form-control" id="txtDesc" rows="3"></textarea>
                         </div>
-                        <button type="submit" class=" col-12 mt-3 btn btn-primary">Enviar</button>
+                        <button runat="server" type="submit" class=" col-12 mt-3 btn btn-primary" id="btEnviarCorreo" onclick="btEnviarCorreo_Click">Enviar</button>
                       </form>
                 </div>
             </div>
