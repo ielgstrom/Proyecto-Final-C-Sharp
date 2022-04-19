@@ -25,15 +25,22 @@ namespace Proyecto_Final_C_Sharp
 
         public void EnviarMail()
         {
-            string nombre = Request["nombre"];
-            string mail = Request["correo"];
-            string desc = Request["txtDesc"];
+            string nombre = name.Text;
+            string mail = email.Text;
+            string desc = txtDesc.Text;
+            
 
             MailMessage correo = new MailMessage();
-            correo.From = new MailAddress(mail, "Prueba", System.Text.Encoding.UTF8);//Correo de salida
-            correo.To.Add("learnify.help@gmail.com"); //Correo destino?
-            correo.Subject = nombre; //Asunto
-            correo.Body = desc; //Mensaje del correo
+            correo.From = new MailAddress(mail, "Learnify Help", System.Text.Encoding.UTF8);//Correo de salida
+            correo.To.Add(mail); //Correo destino?
+            correo.Subject = "Respuesta petición"; //Asunto
+            correo.Body = $@"<h1>Buenos dias, {nombre}</h1>
+                            <h2> Muchas gracias por tu interés, </h2>
+                            <div>Tu peticion se realizara dentro de poco y te responderemos cuando podamos. Nos has pedido: </div>
+                            <p>' {desc} '</p>
+                            <p>Cualquier otra consulta que tengas, responde a este correo</p>
+                            <p>Atentamente,</p>
+                            <p>Equipo de Learnify</p>"; //Mensaje del correo
             correo.IsBodyHtml = true;
             correo.Priority = MailPriority.Normal;
             SmtpClient smtp = new SmtpClient();
@@ -44,6 +51,11 @@ namespace Proyecto_Final_C_Sharp
             ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
             smtp.EnableSsl = true;//True si el servidor de correo permite ssl
             smtp.Send(correo);
+
+            //Borramos los imputs que habia en la pagina al dar al boton
+            name.Text = "";
+            email.Text = "";
+            txtDesc.Text = "";
         }
     }
 }

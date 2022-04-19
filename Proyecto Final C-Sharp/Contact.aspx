@@ -29,6 +29,7 @@
         left: 0px;
         opacity: 0.25;
         z-index: -1;
+        height: calc(100vh - 50px);
     }
 
     .elemCenter2 {
@@ -43,6 +44,7 @@
         margin-right: 40px;
         opacity: 1;
     }
+
     </style>
      <div class="container-fluid contact">
         <div class="row  m-5">
@@ -51,15 +53,18 @@
                     <h2 class="col-md-12 text-center">Contacto</h2>
                         <div class="form-group mb-3">
                           <label for="Name">Nombre</label>
-                          <input runat="server" type="text" class="form-control" id="nombre">
+                            <asp:TextBox ID="name" runat="server" CssClass="form-control" ToolTip="Entra tu nombre"/>
+                          <%--<input runat="server" type="text" class="form-control" id="nombre">--%>
                         </div>
                         <div class="form-group mb-3">
                           <label for="mail">Correo</label>
-                          <input runat="server" type="email" class="form-control" id="correo" >
+                          <asp:TextBox ID="email" runat="server" CssClass="form-control"/>
+                          <%--<input runat="server" type="email" class="form-control" id="correo" >--%>
                         </div>
                         <div class="form-group mb-3">
                             <label for="txtDesc">Descripcion</label>
-                            <textarea runat="server" class="form-control" id="txtDesc" rows="3"></textarea>
+                            <asp:textbox ID="txtDesc" TextMode="multiline" CssClass="form-control" Columns="50" Rows="5" runat="server"/>
+                            <%--<textarea runat="server" class="form-control" id="txtDesc" rows="3"></textarea>--%>
                         </div>
                         <asp:Button ID="btEnviarCorreos" runat="server" Text="Enviar" CssClass="btn btn-primary" OnClick="btEnviarCorreo_Click" />                        
                 </div>
