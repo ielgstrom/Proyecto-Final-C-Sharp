@@ -32,7 +32,7 @@
     height:100%;
     opacity: 0.4;
     background-attachment:fixed;
-    background-size:auto;
+    background-size:cover;
 }
 .sidenav a {
   padding: 6px 8px 6px 16px;
@@ -58,7 +58,8 @@ a.forosLinks{
     top:0;
     left:0;
     overflow-y:auto;
-    max-height: 370px;   
+    /*max-height: 370px;*/   
+    max-height: calc(100vh - 240px);
     
 }
 .likedlist{
@@ -72,6 +73,7 @@ a.forosLinks{
     padding: 0px 20px;
     overflow:auto; 
     z-index:1;
+    width:calc(100% - 180px);
 }
         ::-webkit-scrollbar {
             width: 10px;
@@ -82,6 +84,7 @@ a.forosLinks{
         }
         ::-webkit-scrollbar-thumb {
             background: #888;
+            border-radius:10px;
         }
     </style>
     <div class="sidenav">
@@ -89,20 +92,20 @@ a.forosLinks{
         <a class="upLink likedlist" href="LikedList.aspx">Me gusta</a>
         <br />
         <div class="listForos">
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
-        <a class="forosLinks">Foros</a>
+        <a class="forosLinks" href="Foro.aspx">Foros</a>
+        <a class="forosLinks" href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
+        <a class="forosLinks"href="Foro.aspx">Foros</a>
 
             </div>
         <a class="downLink"  href="Perfil.aspx">Perfil</a>

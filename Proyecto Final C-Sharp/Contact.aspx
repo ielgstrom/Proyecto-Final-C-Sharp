@@ -2,19 +2,19 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
-      .contact {
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 100%;
-    height: 91.6vh;
-    position: relative;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+     .contact {
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 100%;
+        height: 91.6vh;
+        position: relative;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    /* opacity: 0.5; */
-}
+        /* opacity: 0.5; */
+    }
 
     .contact::before {
         content: "";
@@ -29,41 +29,44 @@
         left: 0px;
         opacity: 0.25;
         z-index: -1;
+        height: calc(100vh - 50px);
     }
 
-.elemCenter2 {
-    padding-left: 60px;
-    border-left-style: solid;
-    border-left-color: gray;
-    border-left-width: 2px;
-    opacity: 1;
-}
+    .elemCenter2 {
+        padding-left: 60px;
+        border-left-style: solid;
+        border-left-color: gray;
+        border-left-width: 2px;
+        opacity: 1;
+    }
 
-.elemCenter {
-    margin-right: 40px;
-    opacity: 1;
-}
+    .elemCenter {
+        margin-right: 40px;
+        opacity: 1;
+    }
+
     </style>
      <div class="container-fluid contact">
         <div class="row  m-5">
             <div class="col-md-5 elemCenter">
                 <div class="row">
                     <h2 class="col-md-12 text-center">Contacto</h2>
-                    <form>
                         <div class="form-group mb-3">
                           <label for="Name">Nombre</label>
-                          <input type="text" class="form-control" id="Name">
+                            <asp:TextBox ID="name" runat="server" CssClass="form-control" ToolTip="Entra tu nombre"/>
+                          <%--<input runat="server" type="text" class="form-control" id="nombre">--%>
                         </div>
                         <div class="form-group mb-3">
                           <label for="mail">Correo</label>
-                          <input type="email" class="form-control" id="mail" >
+                          <asp:TextBox ID="email" runat="server" CssClass="form-control"/>
+                          <%--<input runat="server" type="email" class="form-control" id="correo" >--%>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="exampleFormControlTextarea1">Descripcion</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="txtDesc">Descripcion</label>
+                            <asp:textbox ID="txtDesc" TextMode="multiline" CssClass="form-control" Columns="50" Rows="5" runat="server"/>
+                            <%--<textarea runat="server" class="form-control" id="txtDesc" rows="3"></textarea>--%>
                         </div>
-                        <button type="submit" class=" col-12 mt-3 btn btn-primary">Enviar</button>
-                      </form>
+                        <asp:Button ID="btEnviarCorreos" runat="server" Text="Enviar" CssClass="btn btn-primary" OnClick="btEnviarCorreo_Click" />                        
                 </div>
             </div>
   

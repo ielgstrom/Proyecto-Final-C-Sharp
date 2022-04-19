@@ -113,6 +113,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Foro.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -124,6 +125,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Imagenes\icons8-pause-60.png" />
     <Content Include="Imagenes\icons8-play-60.png" />
+    <Content Include="Imagenes\linkedInIcon.png" />
+    <Content Include="Imagenes\profileImageDefault.jpg" />
     <Content Include="MainPage.aspx" />
     <Content Include="NestedMasterPage1.master" />
     <Content Include="LikedList.aspx" />
@@ -146,6 +149,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\scripts.js" />
+    <Content Include="Scripts\pruebaPlayer.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -191,6 +195,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DAL\DBPlaylist.cs" />
     <Compile Include="DAL\DBUsers.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -198,6 +203,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Foro.aspx.cs">
+      <DependentUpon>Foro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Foro.aspx.designer.cs">
+      <DependentUpon>Foro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -209,7 +221,9 @@
     <Compile Include="MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Playlist.cs" />
     <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\Seguridad.cs" />
     <Compile Include="NestedMasterPage1.master.cs">
       <DependentUpon>NestedMasterPage1.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
