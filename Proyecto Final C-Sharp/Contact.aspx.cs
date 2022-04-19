@@ -37,8 +37,10 @@ namespace Proyecto_Final_C_Sharp
             correo.Body = $@"<h1>Buenos dias, {nombre}</h1>
                             <h2> Muchas gracias por tu interés, </h2>
                             <div>Tu peticion se realizara dentro de poco y te responderemos cuando podamos. Nos has pedido: </div>
-                            <p>{desc}</p>
-                            <small>Cualquier otra consulta que tengas, responde a este correo</small>"; //Mensaje del correo
+                            <p>' {desc} '</p>
+                            <p>Cualquier otra consulta que tengas, responde a este correo</p>
+                            <p>Atentamente,</p>
+                            <p>Equipo de Learnify</p>"; //Mensaje del correo
             correo.IsBodyHtml = true;
             correo.Priority = MailPriority.Normal;
             SmtpClient smtp = new SmtpClient();
@@ -49,6 +51,11 @@ namespace Proyecto_Final_C_Sharp
             ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
             smtp.EnableSsl = true;//True si el servidor de correo permite ssl
             smtp.Send(correo);
+
+            //Borramos los imputs que habia en la pagina al dar al boton
+            name.Text = "";
+            email.Text = "";
+            txtDesc.Text = "";
         }
     }
 }
