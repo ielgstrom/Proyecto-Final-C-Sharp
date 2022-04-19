@@ -108,5 +108,35 @@ namespace Proyecto_Final_C_Sharp.Model
             return user;
         }
 
+        //---OTHER TABLES---
+
+        //Messages
+        //Returns all messages written by the user
+        public List<Message> Messages(SqlConnection connection)
+        {
+            List<Message> messages = new List<Message>();
+            SqlDataReader reader = DBMessages.Read(connection, email);
+            if (reader == null) return null;
+            while (reader.Read())
+            {
+                int nId;
+                string nUserEmail, nMessageText;
+                DateTime nCreationDate;
+                int? nRespondsToId;
+
+                nId = (int)reader["id"];
+                nUserEmail = (string)reader["userEmail"];
+                nCreationDate = (DateTime)reader["creationDate"];
+                nMessageText = (string)reader["messageText"];
+                if (reader["respondsToId"] == DBNull.Value) nRespondsToId = null;
+                else nRespondsToId = (int?)reader["respondsToId"];
+
+                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId));
+            }
+
+            reader.Close();
+            return messages;
+        }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Final_C_Sharp.DAL
 {
-    public static class DBPlaylist
+    public static class DBPlaylists
     {
         //INSERT
         //Inserts a row into Lists
@@ -16,7 +16,7 @@ namespace Proyecto_Final_C_Sharp.DAL
             int control = 0;
 
             //Create the query and the sql command
-            string query = @"INSERT INTO Lists (userEmail, name, private)
+            string query = @"INSERT INTO Playlists (userEmail, name, private)
                             VALUES (@pUserEmail, @pName, @pPrivate)";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -46,17 +46,17 @@ namespace Proyecto_Final_C_Sharp.DAL
         //DELETE
         //Deletes a row from Lists
         //Uses primary key as identifier
-        public static int Delete(SqlConnection connection, int PrimaryKey)
+        public static int Delete(SqlConnection connection, int primaryKey)
         {
             int control = 0;
 
             //Create the query and the sql command
-            string query = "DELETE FROM Lists WHERE id = @pId";
+            string query = "DELETE FROM Playlists WHERE id = @pId";
             SqlCommand command = new SqlCommand(query, connection);
 
             //Create sql parameters
             SqlParameter pId = new SqlParameter("@pId", System.Data.SqlDbType.Int);
-            pId.Value = PrimaryKey;
+            pId.Value = primaryKey;
 
             //Add sql parameters
             command.Parameters.Add(pId);
@@ -70,12 +70,12 @@ namespace Proyecto_Final_C_Sharp.DAL
         //MODIFY
         //Modifies name and private attributes
         //Uses primary key as identifier
-        public static int Modify(SqlConnection connection, int PrimaryKey, string name, bool isPrivate)
+        public static int Modify(SqlConnection connection, int primaryKey, string name, bool isPrivate)
         {
             int control = 0;
 
             //Create the query and the sql command
-            string query = @"UPDATE Lists SET
+            string query = @"UPDATE Playlists SET
                             name = @pName, private = @pPrivate
                             WHERE id = @pId";
 
@@ -90,7 +90,7 @@ namespace Proyecto_Final_C_Sharp.DAL
             else pPrivate.Value = 0;
 
             SqlParameter pId = new SqlParameter("@pId", System.Data.SqlDbType.Int);
-            pId.Value = PrimaryKey;
+            pId.Value = primaryKey;
 
             //Add sql parameters
             command.Parameters.Add(pName);
@@ -115,8 +115,6 @@ namespace Proyecto_Final_C_Sharp.DAL
 
         //READ
         //Selects the rows from Lists of a certain user
-        //READ
-        //Reads all rows from users
         public static SqlDataReader Read(SqlConnection connection, string userEmail)
         {
             string query = "SELECT * FROM Lists WHERE userEmail = @pUserEmail";
