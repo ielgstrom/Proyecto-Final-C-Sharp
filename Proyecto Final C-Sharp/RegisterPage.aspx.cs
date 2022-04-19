@@ -25,6 +25,7 @@ namespace Proyecto_Final_C_Sharp
         private void comprobarDatos()
         {
             SqlConnection connection = DAL.DBConnection.ConnectLearnifyDB();
+            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
 
             string nombre = Request["inputNombre"];
             string nombreUsuario = Request["inputNombreUsuario"];
@@ -39,7 +40,13 @@ namespace Proyecto_Final_C_Sharp
             }
             else
             {
-                
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT Region (RegionID, RegionDescription) VALUES (5, 'NorthWestern')";
+                cmd.Connection = sqlConnection1;
+
+                sqlConnection1.Open();
+                cmd.ExecuteNonQuery();
+                sqlConnection1.Close();
             }
         }
     }
