@@ -20,22 +20,30 @@ namespace Proyecto_Final_C_Sharp
 
         public void btEnviarCorreo_Click(object sender, EventArgs e)
         {
+            EnviarMail();
+        }
+
+        public void EnviarMail()
+        {
+            string nombre = Request["nombre"];
+            string mail = Request["correo"];
+            string desc = Request["txtDesc"];
+
             MailMessage correo = new MailMessage();
-            correo.From = new MailAddress("xxxxxx@gmail.com", "Kyocode", System.Text.Encoding.UTF8);//Correo de salida
-            correo.To.Add("xxxxxx@kyocode.com"); //Correo destino?
-            correo.Subject = "Correo de prueba"; //Asunto
-            correo.Body = "Este es un correo de prueba desde c#"; //Mensaje del correo
+            correo.From = new MailAddress(mail, "Prueba", System.Text.Encoding.UTF8);//Correo de salida
+            correo.To.Add("learnify.help@gmail.com"); //Correo destino?
+            correo.Subject = nombre; //Asunto
+            correo.Body = desc; //Mensaje del correo
             correo.IsBodyHtml = true;
             correo.Priority = MailPriority.Normal;
             SmtpClient smtp = new SmtpClient();
             smtp.UseDefaultCredentials = false;
             smtp.Host = "smtp.gmail.com"; //Host del servidor de correo
             smtp.Port = 25; //Puerto de salida
-            smtp.Credentials = new System.Net.NetworkCredential("xxxxxx@gmail.com", "*******");//Cuenta de correo
+            smtp.Credentials = new System.Net.NetworkCredential("learnify.help@gmail.com", "123contra");//Cuenta de correo
             ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
             smtp.EnableSsl = true;//True si el servidor de correo permite ssl
             smtp.Send(correo);
         }
-
     }
 }

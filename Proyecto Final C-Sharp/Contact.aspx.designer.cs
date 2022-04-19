@@ -15,22 +15,22 @@ namespace Proyecto_Final_C_Sharp
     {
 
         /// <summary>
-        /// Control Name.
+        /// Control nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Name;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nombre;
 
         /// <summary>
-        /// Control mail.
+        /// Control correo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl mail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl correo;
 
         /// <summary>
         /// Control txtDesc.
@@ -42,12 +42,12 @@ namespace Proyecto_Final_C_Sharp
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDesc;
 
         /// <summary>
-        /// Control btEnviarCorreo.
+        /// Control btEnviarCorreos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btEnviarCorreo;
+        protected global::System.Web.UI.WebControls.Button btEnviarCorreos;
     }
 }
