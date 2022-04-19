@@ -29,6 +29,7 @@
         left: 0px;
         opacity: 0.25;
         z-index: -1;
+        height: calc(100vh - 50px);
     }
 
     .elemCenter2 {
