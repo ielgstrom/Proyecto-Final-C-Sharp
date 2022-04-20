@@ -10,13 +10,13 @@ namespace Proyecto_Final_C_Sharp.DAL
     {
         //INSERT
         //Inserts a row into Messages
-        public static int Insert(SqlConnection connection, string userEmail, DateTime creationDate, string messageText, int? respondsToId)
+        public static int Insert(SqlConnection connection, string userEmail, DateTime creationDate, string messageText, int? respondsToId, string topic)
         {
             int control = 0;
 
             //Create the query and the sql command
-            string query = @"INSERT INTO Messages (userEmail, creationDate, messageText, respondsToId)
-                            VALUES (@pUserEmail, @pCreationDate, @pMessageText, @pRespondsToId)";
+            string query = @"INSERT INTO Messages (userEmail, creationDate, messageText, respondsToId, topic)
+                            VALUES (@pUserEmail, @pCreationDate, @pMessageText, @pRespondsToId, @pTopic)";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -34,11 +34,16 @@ namespace Proyecto_Final_C_Sharp.DAL
             if (respondsToId.HasValue) pRespondsToId.Value = respondsToId;
             else pRespondsToId.Value = DBNull.Value;
 
+            SqlParameter pTopic = new SqlParameter("@pTopic", System.Data.SqlDbType.NVarChar, 50);
+            if (topic == null) pTopic.Value = DBNull.Value;
+            else pTopic.Value = topic;
+
             //Add sql parameters
             command.Parameters.Add(pUserEmail);
             command.Parameters.Add(pCreationDate);
             command.Parameters.Add(pMessageText);
             command.Parameters.Add(pRespondsToId);
+            command.Parameters.Add(pTopic);
 
             //Execute query
             control = command.ExecuteNonQuery();
@@ -73,13 +78,13 @@ namespace Proyecto_Final_C_Sharp.DAL
         //MODIFY
         //Modifies name and private attributes
         //Uses primary key as identifier
-        public static int Modify(SqlConnection connection, int primaryKey, string userEmail, DateTime creationDate, string messageText, int? respondsToId)
+        public static int Modify(SqlConnection connection, int primaryKey, string userEmail, DateTime creationDate, string messageText, int? respondsToId, string topic)
         {
             int control = 0;
 
             //Create the query and the sql command
             string query = @"UPDATE Messages SET
-                            userEmail = @pUserEmail, creationDate = @pCreationDate, messageText = @pMessageText, respondsToId = @pRespondsToId
+                            userEmail = @pUserEmail, creationDate = @pCreationDate, messageText = @pMessageText, respondsToId = @pRespondsToId, topic = @pTopic
                             WHERE id = @pId";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -101,12 +106,17 @@ namespace Proyecto_Final_C_Sharp.DAL
             if (respondsToId.HasValue) pRespondsToId.Value = respondsToId;
             else pRespondsToId.Value = DBNull.Value;
 
+            SqlParameter pTopic = new SqlParameter("@pTopic", System.Data.SqlDbType.NVarChar, 50);
+            if (topic == null) pTopic.Value = DBNull.Value;
+            else pTopic.Value = topic;
+
             //Add sql parameters
             command.Parameters.Add(pId);
             command.Parameters.Add(pUserEmail);
             command.Parameters.Add(pCreationDate);
             command.Parameters.Add(pMessageText);
             command.Parameters.Add(pRespondsToId);
+            command.Parameters.Add(pTopic);
 
             //Execute query
             control = command.ExecuteNonQuery();
@@ -156,6 +166,26 @@ namespace Proyecto_Final_C_Sharp.DAL
 
             //Add sql parameters
             command.Parameters.Add(pRespondsToId);
+
+            //Execute query
+            SqlDataReader reader = command.ExecuteReader();
+            return reader;
+        }
+
+        //READ
+        //Reads all messages from a certain topic
+        public static SqlDataReader ReadTopic(SqlConnection connection, string topic)
+        {
+            string query = "SELECT * FROM Messages WHERE topic = @pTopic";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            //Create sql parameters
+            SqlParameter pTopic = new SqlParameter("@pTopic", System.Data.SqlDbType.NVarChar, 50);
+            if (topic == null) pTopic.Value = DBNull.Value;
+            else pTopic.Value = topic;
+
+            //Add sql parameters
+            command.Parameters.Add(pTopic);
 
             //Execute query
             SqlDataReader reader = command.ExecuteReader();

@@ -15,26 +15,29 @@ namespace Proyecto_Final_C_Sharp.Model
         private string userEmail, messageText;
         private DateTime creationDate;
         private int? respondsToId;
+        private string topic;
 
         //Constructors
         public Message () { }
 
-        public Message(int Id, string UserEmail, DateTime CreationDate, string MessageText, int? RespondsToId)
+        public Message(int Id, string UserEmail, DateTime CreationDate, string MessageText, int? RespondsToId, string Topic)
         {
             id = Id;
             userEmail = UserEmail;
             creationDate = CreationDate;
             messageText = MessageText;
             respondsToId = RespondsToId;
+            topic = Topic;
         }
 
-        public Message(string UserEmail, string MessageText)
+        public Message(string UserEmail, string MessageText, string Topic)
         {
             id = -1;
             userEmail= UserEmail;
             creationDate = DateTime.Now;
             messageText = MessageText;
             respondsToId = null;
+            topic = Topic;
         }
 
         //Get Set
@@ -43,6 +46,7 @@ namespace Proyecto_Final_C_Sharp.Model
         public DateTime CreationDate { get { return creationDate; } }
         public string MessageText { get { return messageText; } }
         public int? RespondsToId { get { return respondsToId; } }
+        public string Topic { get { return topic; } }
 
         //DB Access
 
@@ -51,7 +55,7 @@ namespace Proyecto_Final_C_Sharp.Model
         //Returns 1 on success
         public int Insert(SqlConnection connection)
         {
-            return DBMessages.Insert(connection, userEmail, creationDate, messageText, respondsToId);
+            return DBMessages.Insert(connection, userEmail, creationDate, messageText, respondsToId, topic);
         }
 
         //Delete
@@ -67,7 +71,7 @@ namespace Proyecto_Final_C_Sharp.Model
         //Returns 1 on success
         public int Modify(SqlConnection connection)
         {
-            return DBMessages.Modify(connection, id, userEmail, creationDate, messageText, respondsToId);
+            return DBMessages.Modify(connection, id, userEmail, creationDate, messageText, respondsToId, topic);
         }
 
         //Read
@@ -80,7 +84,7 @@ namespace Proyecto_Final_C_Sharp.Model
             while (reader.Read())
             {
                 int nId;
-                string nUserEmail, nMessageText;
+                string nUserEmail, nMessageText, nTopic;
                 DateTime nCreationDate;
                 int? nRespondsToId;
 
@@ -90,8 +94,10 @@ namespace Proyecto_Final_C_Sharp.Model
                 nMessageText = (string)reader["messageText"];
                 if (reader["respondsToId"] == DBNull.Value) nRespondsToId = null;
                 else nRespondsToId = (int?)reader["respondsToId"];
+                if (reader["topic"] == DBNull.Value) nTopic = null;
+                else nTopic = (string)reader["topic"];
 
-                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId));
+                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId, nTopic));
             }
 
             reader.Close();
@@ -108,7 +114,7 @@ namespace Proyecto_Final_C_Sharp.Model
             while (reader.Read())
             {
                 int nId;
-                string nUserEmail, nMessageText;
+                string nUserEmail, nMessageText, nTopic;
                 DateTime nCreationDate;
                 int? nRespondsToId;
 
@@ -118,8 +124,38 @@ namespace Proyecto_Final_C_Sharp.Model
                 nMessageText = (string)reader["messageText"];
                 if (reader["respondsToId"] == DBNull.Value) nRespondsToId = null;
                 else nRespondsToId = (int?)reader["respondsToId"];
+                if (reader["topic"] == DBNull.Value) nTopic = null;
+                else nTopic = (string)reader["topic"];
 
-                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId));
+                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId, nTopic));
+            }
+
+            reader.Close();
+            return messages;
+        }
+
+        public List<Message> TopicMessages(SqlConnection connection, string topic)
+        {
+            List<Message> messages = new List<Message>();
+            SqlDataReader reader = DBMessages.ReadTopic(connection, topic);
+            if (reader == null) return null;
+            while (reader.Read())
+            {
+                int nId;
+                string nUserEmail, nMessageText, nTopic;
+                DateTime nCreationDate;
+                int? nRespondsToId;
+
+                nId = (int)reader["id"];
+                nUserEmail = (string)reader["userEmail"];
+                nCreationDate = (DateTime)reader["creationDate"];
+                nMessageText = (string)reader["messageText"];
+                if (reader["respondsToId"] == DBNull.Value) nRespondsToId = null;
+                else nRespondsToId = (int?)reader["respondsToId"];
+                if (reader["topic"] == DBNull.Value) nTopic = null;
+                else nTopic = (string)reader["topic"];
+
+                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId, nTopic));
             }
 
             reader.Close();
