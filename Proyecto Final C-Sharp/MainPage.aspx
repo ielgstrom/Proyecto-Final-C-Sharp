@@ -55,42 +55,7 @@
     </style>
     <script type="text/javascript" src="Scripts/pruebaPlayer.js"></script>
     <style>
-        :root {
-          font-family: "Roboto Mono", monospace;
-          margin: 0;
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          line-height: 1.6rem;
-          border-radius: 0.2rem;
-        }
-
-        h1 {
-          color: black;
-          text-align: center;
-          margin: 1.2rem 0 10.5rem 0;
-          line-height: 2rem;
-        }
-
-        kbd {
-          padding: 0.1em 0.6em;
-          border: 1px solid #ccc;
-          font-size: 11px;
-          font-family: Arial, Helvetica, sans-serif;
-          background-color: #f7f7f7;
-          color: #333;
-          -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-          -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-          border-radius: 3px;
-          display: inline-block;
-          margin: 0.1em;
-          text-shadow: 0 1px 0 #fff;
-          line-height: 1.4;
-          white-space: nowrap;
-        }
-
+        
         #input-field {
           display: none;
         }
@@ -103,28 +68,6 @@
         legend,
         #notification {
           text-align: center;
-        }
-
-        #input-field.wrong {
-          background: rgba(198, 38, 46, 0.3);
-        }
-
-        .wrong {
-          color: #c6262e;
-        }
-
-        .correct {
-          color: #68b723;
-        }
-
-        .normal {
-          color: black;
-        }
-
-        .center {
-          display: flex;
-          justify-content: center;
-          align-items: center;
         }
 
         .hidden,
@@ -147,34 +90,8 @@
           background: #eaeaea;
         }
 
-        .fade {
-          animation: fade 2s ease-in infinite;
-        }
-
         #loader-fade-text {
           animation: fade 2s ease-in infinite, rgb 5s linear infinite;
-        }
-
-        @keyframes fade {
-          0% {
-            opacity: 0;
-          }
-
-          25% {
-            opacity: 0.5;
-          }
-
-          50% {
-            opacity: 1;
-          }
-
-          75% {
-            opacity: 0.5;
-          }
-
-          100% {
-            opacity: 0;
-          }
         }
 
         @keyframes rgb {
@@ -264,12 +181,6 @@
           color: black;
         }
 
-        .valid {
-          border-width: 2px;
-          border-style: solid;
-          animation: rgb-border 5s linear infinite;
-        }
-
         .overlay-buttons {
           color: white;
           transition-duration: 0.5s;
@@ -344,10 +255,6 @@
           font-size: 1.2rem;
           text-align: center;
           padding: 0.4rem 1rem;
-        }
-
-        img {
-          background-color: #d4d4d4;
         }
 
         /* The Modal (background) */
@@ -498,35 +405,15 @@
         </small>
     </div>
     <h3>Podcasts que te pueden interesar</h3>
-    <!--
-    <figure>
-        <figcaption>Listen to the T-Rex:</figcaption>
-        <audio
-            controls
-            src="https://www.youtube.com/watch?v=fWOlTvmBiQA&list=PLcaI8vM1NK3teGT4oVi9JzyX8WLdkgbz_&index=4">
-                Your browser does not support the
-                <code>audio</code> element.
-        </audio>
-    </figure>
-    -->
-
     <div class="container">
       <div class="child">
         <div id="main-area">
           <form action="javascript:void(0);">
-            <div class="bar HomePageForumplayer">
-              <input
-                id="input-field"
-                type="url"
-                value="https://www.youtube.com/watch?v=fWOlTvmBiQA&list=PLcaI8vM1NK3teGT4oVi9JzyX8WLdkgbz_&index=4"
-              />
+            <div class="bar">
+              <input id="input-field" type="url"
+                  value="https://www.youtube.com/watch?v=fWOlTvmBiQA&list=PLcaI8vM1NK3teGT4oVi9JzyX8WLdkgbz_&index=4"/>
               <asp:Image ID="prueba" runat="server" ImageUrl="Imagenes/logoNegro.png" />
-              <button
-                id="play"
-                title="play video url"
-              >
-                play
-              </button>
+              <button id="play" title="play video url">play</button>
             </div>
           </form>
         </div>
@@ -536,26 +423,10 @@
     <div id="overlay">
       <div id="overlay-content">
         <div>
-          <button
-            class="overlay-buttons transparent-button material-icons-round"
-            title="close"
-          >
-            close
-          </button>
-          <button
-            class="overlay-buttons transparent-button material-icons-round"
-            title="maximize"
-          >
-            check_box_outline_blank
-          </button>
-          <button
-            class="overlay-buttons transparent-button material-icons-round"
-            title="minimize"
-          >
-            minimize
-          </button>
+          <button class="overlay-buttons transparent-button material-icons-round" title="close" > close </button>
+          <button class="overlay-buttons transparent-button material-icons-round" title="maximize" > check_box_outline_blank </button>
+          <button class="overlay-buttons transparent-button material-icons-round" title="minimize" > minimize </button>
         </div>
-
 
         <progress id="loader" title="loading video..."></progress>
         <iframe id="videoPlayer" loading="eager" allowfullscreen="true">
@@ -570,13 +441,12 @@
               <div id="reload" class="options">reload video</div>
               <div id="private-mode" class="options" data-enabled="false" title="private mode is currently disabled(click to enable)">private mode</div>
               <div id="open-video" class="options">open video on youtube</div>
-              <!-- <div>Link 3</a> -->
             </div>
           </div>
 
     </div>
     <div id="expand-box" class="hidden">
-      <img id="thumbnail" title="click to reopen minimized video">
+      <img src="#" id="thumbnail" title="click to reopen minimized video">
       <div id="expand-hint-text">minimized video</div>
     </div>
     <div id="shortcuts-modal" class="modal">
@@ -600,5 +470,4 @@
       </div>
     </div>
  
-    
 </asp:Content>

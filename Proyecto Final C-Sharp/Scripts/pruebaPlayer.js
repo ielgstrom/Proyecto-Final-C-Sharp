@@ -210,15 +210,6 @@
         }
     }
 
-    // allows us to sleep for x seconds
-    // takes parameter duration(float)
-    function sleep(duration) {
-        var currentTime = new Date().getTime();
-        while (new Date().getTime() < currentTime + duration * 1000) {
-            /* Do nothing */
-        }
-    }
-
     // closes player video overlay
     function closeOverlay() {
         $overlay.hide();
@@ -251,31 +242,7 @@
         }
     }
 
-    // sets $notification, levels show different $notification colors, duration determines how long $notification appears on screen
-    // takes parameters message(string), level(integer), and duration(float)
-    function setNotification(message, level = 0, duration = 0) {
-        // level 0 is a normal message, level 1 is a "correct" message, and level -1 is an "error" message
-        $notification.text(message);
-        if (level === 0) {
-            $notification.addClass("normal");
-        } else if (level === 1) {
-            $notification.addClass("correct");
-        } else if (level === -1) {
-            $notification.addClass("wrong");
-        } else {
-            console.error("Error setting notification");
-        }
-
-        if (duration > 0) {
-            setTimeout(clearNotification, (duration *= 1000));
-        } else if (duration === 0) {
-            console.log("No duration given for notification");
-        } else {
-            console.warn("Invalid notification duration given!");
-        }
-    }
-
-    // clears notification
+       // clears notification
     function clearNotification() {
         $notification.text("");
         $notification.removeClass();
