@@ -138,5 +138,32 @@ namespace Proyecto_Final_C_Sharp.Model
             return messages;
         }
 
+        //Playlists
+        //Returns every playlist owned by the user
+        public List<Playlist> Playlists(SqlConnection connection)
+        {
+            List<Playlist> playlists = new List<Playlist>();
+            SqlDataReader reader = DBPlaylists.Read(connection, email);
+            if (reader == null) return null;
+
+            while (reader.Read())
+            {
+                int nId;
+                string nName, nUserEmail;
+                bool nIsPrivate;
+
+                nId = (int)reader["id"];
+                nName = (string)reader["name"];
+                nUserEmail = (string)reader["userEmail"];
+                nIsPrivate = (bool)reader["private"];
+
+                Playlist playlist = new Playlist(nId, nName, nUserEmail, nIsPrivate);
+                playlists.Add(playlist);
+            }
+
+            reader.Close();
+            return playlists;
+        }
+
     }
 }
