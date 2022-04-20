@@ -94,6 +94,35 @@ namespace Proyecto_Final_C_Sharp.Model
 
         //---OTHER TABLES---
 
+        //Audios
+        //Returns a List of the playlist audios
+        public List<Audio> Audios(SqlConnection connection)
+        {
+            List<Audio> audios = new List<Audio>();
+            SqlDataReader reader = DBAudio.Read(connection, id);
+            if (reader == null) return null;
+
+            while (reader.Read())
+            {
+                int nId;
+                string nName, nPath, nDescription;
+
+                nId = (int)reader["id"];
+                nName = (string)reader["name"];
+                if (reader["path"] == DBNull.Value) nPath = null;
+                else nPath = (string)reader["path"];
+                if (reader["description"] == DBNull.Value) nDescription = null;
+                else nDescription = (string)reader["description"];
+
+                Audio audio = new Audio(nId, nName, nPath, nDescription);
+                audios.Add(audio);
+            }
+
+            reader.Close();
+
+            return audios;
+        }
+
 
     }
 }
