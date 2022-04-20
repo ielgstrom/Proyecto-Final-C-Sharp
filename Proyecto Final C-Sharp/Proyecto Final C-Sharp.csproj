@@ -148,6 +148,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\scripts.js" />
     <Content Include="Scripts\pruebaPlayer.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -194,7 +195,8 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DBConnection.cs" />
-    <Compile Include="DAL\DBPlaylist.cs" />
+    <Compile Include="DAL\DBMessages.cs" />
+    <Compile Include="DAL\DBPlaylists.cs" />
     <Compile Include="DAL\DBUsers.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -220,6 +222,8 @@
     <Compile Include="MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Audio.cs" />
+    <Compile Include="Model\Message.cs" />
     <Compile Include="Model\Playlist.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Seguridad.cs" />

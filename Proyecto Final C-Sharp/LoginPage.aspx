@@ -31,23 +31,24 @@
                 <br />
                 <hr />
             </div>
-            <form class="formRegistro">
+            <form class="formRegistro" runat="server">
               <div class="form-group">
-                <label for="inputEmail">Correo electrónico</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="correo@gmail.com"/>
+                <label for="inputEmail">Usuario</label>
+                <input type="text" class="form-control" id="IdUsername" placeholder="usuarioExample" runat="server"/>
               </div>
               <div class="form-group">
                 <label for="inputContra">Contraseña</label>
-                <input type="password" class="form-control" aria-describedby="contraHelp" id="inputContra" placeholder="**********"/>
+                <input type="password" class="form-control" aria-describedby="contraHelp" id="IdPassword" placeholder="**********"/>
               </div>
               <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
                 <label class="form-check-label" for="connected">Recuerdame</label>
               </div>
-              <button id="btSignIn" type="submit" class="btn btn-primary">INICIAR SESIÓN</button>
+              <button id="idInicio" type="submit" onclick="Login_Submit()" class="btn btn-primary">INICIAR SESIÓN</button>
             </form>
           </div>
       </div>
     </div>
+   <script src="Scripts/scripts.js"></script>
 </body>
 </html>
