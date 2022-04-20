@@ -24,6 +24,15 @@ namespace Proyecto_Final_C_Sharp
         protected global::System.Web.UI.WebControls.Button ButtonJoin;
 
         /// <summary>
+        /// Control contenedorMensajesTest.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel contenedorMensajesTest;
+
+        /// <summary>
         /// Control InputForo.
         /// </summary>
         /// <remarks>
@@ -31,5 +40,14 @@ namespace Proyecto_Final_C_Sharp
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox InputForo;
+
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

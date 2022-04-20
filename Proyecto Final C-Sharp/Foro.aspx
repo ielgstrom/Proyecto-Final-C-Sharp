@@ -9,30 +9,17 @@
         </div>
     </div>
     <div class="PageForChat">
-        <div class="contentedorMensajes">
+        <asp:Panel CssClass="contentedorMensajes" ID="contenedorMensajesTest" runat="server"></asp:Panel>
+        <%--<div class="contentedorMensajes" id="contenedorMensajes">
             <div class="mensajeIndividual mensajeIndividualOther">
                 <small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
-                <div class="messageContent">Contenido mensaje</div>
+                <div class="messageContent">
+                    Contenido mensaje
+                </div>
             </div>
-            <div class="mensajeIndividual mensajeIndividualUser"><small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
-                <div class="messageContent">Contenido mensaje</div></div>
-            <div class="mensajeIndividual mensajeIndividualOther"><small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
-                <div class="messageContent">Contenido mensaje</div></div>
-            <div class="mensajeIndividual mensajeIndividualUser"><small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
-                <div class="messageContent">Contenido mensaje</div></div>
-            <div class="mensajeIndividual mensajeIndividualOther"><small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
-                <div class="messageContent">Contenido mensaje</div></div>
-            <div class="mensajeIndividual mensajeIndividualOther"><small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
-                <div class="messageContent">Contenido mensaje</div></div>
-            <div class="mensajeIndividual mensajeIndividualUser"><small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
-                <div class="messageContent">Contenido mensaje</div></div>
-            <div class="mensajeIndividual mensajeIndividualOther"><small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
-                <div class="messageContent">Contenido mensaje</div></div>
-            <div class="mensajeIndividual mensajeIndividualOther"><small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
-                <div class="messageContent">Contenido mensaje</div></div>
-      
-        </div>
-        <asp:TextBox ID="InputForo" runat="server" Enabled="false" CssClass="inputChat"></asp:TextBox>
+        </div>--%>
+        <asp:TextBox ID="InputForo" autocomplete="off" runat="server" Enabled="true" CssClass="inputChat"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" Text="Publicar" CssClass="btn btn-secondary buttonChat" OnClick="Button1_Click" />
     </div>
     <style>
         .messageContent{
@@ -86,10 +73,16 @@
 
         .inputChat{
             position: absolute;
-            top: 93%;
+            top: 92%;
             left: 2%;
-            width: 96%;
+            width: 89%;
             max-width: 100%;
+        }
+        .buttonChat{
+ 
+                position: absolute;
+    right: 23px;
+    bottom: 10px;
         }
     </style>
 </asp:Content>

@@ -131,7 +131,7 @@ namespace Proyecto_Final_C_Sharp.Model
                 if (reader["respondsToId"] == DBNull.Value) nRespondsToId = null;
                 else nRespondsToId = (int?)reader["respondsToId"];
 
-                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId));
+                //messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId));
             }
 
             reader.Close();
