@@ -139,7 +139,6 @@
         $inputField.removeClass();
         $playButton.removeClass();
         $playButton.css("color", "#1a1a1a");
-        $inputField.val("");
         $inputField.focus();
         // document.querySelector("#private-mode").checked = false;
         $privateModeButton.data("enabled", false);

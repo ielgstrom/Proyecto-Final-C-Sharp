@@ -17,6 +17,7 @@ namespace Proyecto_Final_C_Sharp
         public static void comprobacionLog(){
             using (SqlConnection connection = DAL.DBConnection.ConnectLearnifyDB())
             {
+                /*
                 sqlCon.Open();
                 string query = "SELECT COUNT(1) FROM Users WHERE username=@username AND password=@password";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
@@ -29,6 +30,7 @@ namespace Proyecto_Final_C_Sharp
                     Response.Redirect("Dashboard.aspx");
                 }
                 else { lblErrorMessage.Visible = true; }
+                */
             }
         }
     }
