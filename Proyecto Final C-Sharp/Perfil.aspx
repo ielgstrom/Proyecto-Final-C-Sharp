@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/NestedMasterPage1.master" CodeBehind="Perfil.aspx.cs" Inherits="Proyecto_Final_C_Sharp.Perfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ChildContent2" runat="server">
-   
+     <script src="Scripts/scripts.js"></script>
+
     <h1>Este es tu perfil: "Nombre"</h1>
         <img src="Imagenes/profileImageDefault.jpg" class="imageProfile"/>
     <div class="row mainProfileContent">
@@ -35,7 +36,7 @@
     </div>
         </div>
     <div class="row mainProfileContent">
-        <asp:Button ID="CloseSesion" runat="server" Text="Cerrar Sesion" CssClass="btn btn-danger col-md-2"/>
+        <asp:Button ID="CloseSesion" runat="server" OnClientClick="deleteCookie();" hr Text="Cerrar Sesion" CssClass="btn btn-danger col-md-2" OnClick="CloseSesion_Click"/>
         <asp:Button ID="SaveChanges" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary col-md-4 col-md-offset-6"/>
     </div>
     <style>
