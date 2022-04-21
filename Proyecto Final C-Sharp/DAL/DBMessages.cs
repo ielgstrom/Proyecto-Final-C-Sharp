@@ -192,6 +192,16 @@ namespace Proyecto_Final_C_Sharp.DAL
             return reader;
         }
 
+        //Topics
+        //Reads every topic
+        public static SqlDataReader Topics(SqlConnection connection)
+        {
+            string query = "SELECT DISTINCT topic FROM Messages";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            return reader;
+        }
+
 
     }
 }
