@@ -133,7 +133,7 @@ namespace Proyecto_Final_C_Sharp.Model
                 if (reader["topic"] == DBNull.Value) nTopic = null;
                 else nTopic = (string)reader["topic"];
 
-                //messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId));
+                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId, nTopic));
             }
 
             reader.Close();

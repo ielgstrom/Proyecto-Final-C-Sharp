@@ -60,11 +60,6 @@
           display: none;
         }
 
-        button:disabled:not(#expand:disabled) {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-
         legend,
         #notification {
           text-align: center;
@@ -165,22 +160,6 @@
           justify-content: space-between;
         }
 
-        fieldset {
-          border-style: solid;
-          border-radius: 0.2rem;
-        }
-
-        button {
-          border: none;
-          font: inherit;
-          padding: 0.4rem 1rem;
-          border-radius: 0.2rem;
-          font-size: 1.2rem;
-          cursor: pointer;
-          background: #d4d4d4;
-          color: black;
-        }
-
         .overlay-buttons {
           color: white;
           transition-duration: 0.5s;
@@ -225,7 +204,7 @@
           -ms-transform: translate(-50%, -50%);
         }
 
-        .container {
+        .containerPlayer {
           position: relative;
           display: flex;
           justify-content: center;
@@ -405,7 +384,7 @@
         </small>
     </div>
     <h3>Podcasts que te pueden interesar</h3>
-    <div class="container">
+    <div class="containerPlayer">
       <div class="child">
         <div id="main-area">
           <form action="javascript:void(0);">

@@ -18,18 +18,19 @@ namespace Proyecto_Final_C_Sharp
 
         }
 
+        // enviamos correo al darle al submit
         public void btEnviarCorreo_Click(object sender, EventArgs e)
         {
             EnviarMail();
         }
 
+        // metodo que envia un correo al destinatario de que se ha recibido su peticion
         public void EnviarMail()
         {
             string nombre = name.Text;
             string mail = email.Text;
             string desc = txtDesc.Text;
             
-
             MailMessage correo = new MailMessage();
             correo.From = new MailAddress(mail, "Learnify Help", System.Text.Encoding.UTF8);//Correo de salida
             correo.To.Add(mail); //Correo destino?
