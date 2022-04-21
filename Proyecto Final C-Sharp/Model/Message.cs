@@ -162,5 +162,21 @@ namespace Proyecto_Final_C_Sharp.Model
             return messages;
         }
 
+        public List<string> Topics(SqlConnection connection)
+        {
+            List<string> topics = new List<string>();
+            SqlDataReader reader = DBMessages.Topics(connection);
+            if (reader == null) return null;
+            while (reader.Read())
+            {
+                string nTopic;
+                if (reader["topic"] == DBNull.Value) nTopic = null;
+                else nTopic = (string)reader["topic"];
+                topics.Add(nTopic);
+            }
+            reader.Close();
+            return topics;
+        }
+
     }
 }
