@@ -10,7 +10,8 @@
     </div>
     <div class="PageForChat">
         <asp:Panel CssClass="contentedorMensajes" ID="contenedorMensajesTest" runat="server"></asp:Panel>
-        <%--<div class="contentedorMensajes" id="contenedorMensajes">
+        <%--MODELO PARA AÑADIR MENAJES DE MANERA DINAMICA EN C#
+            <div class="contentedorMensajes" id="contenedorMensajes">
             <div class="mensajeIndividual mensajeIndividualOther">
                 <small class="nameForumPerson">Nombre Persona</small> - <small class="dateForumPost">13:20 20/12/2021</small>
                 <div class="messageContent">
@@ -18,8 +19,10 @@
                 </div>
             </div>
         </div>--%>
-        <asp:TextBox ID="InputForo" autocomplete="off" runat="server" Enabled="true" CssClass="inputChat"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Publicar" CssClass="btn btn-secondary buttonChat" OnClick="Button1_Click" />
+        <asp:Panel  ID="Panel1" runat="server" DefaultButton="Button1">
+            <asp:TextBox ID="InputForo" autocomplete="off" runat="server" Enabled="true" CssClass="inputChat"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" Text="Publicar" CssClass="btn btn-secondary buttonChat" OnClick="Button1_Click" />
+        </asp:Panel>
     </div>
     <style>
         .messageContent{
