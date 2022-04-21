@@ -130,7 +130,8 @@ namespace Proyecto_Final_C_Sharp.Model
                 nMessageText = (string)reader["messageText"];
                 if (reader["respondsToId"] == DBNull.Value) nRespondsToId = null;
                 else nRespondsToId = (int?)reader["respondsToId"];
-                nTopic = (string)reader["topic"];
+                if (reader["topic"] == DBNull.Value) nTopic = null;
+                else nTopic = (string)reader["topic"];
 
                 messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId, nTopic));
             }
