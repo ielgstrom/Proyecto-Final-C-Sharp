@@ -15,20 +15,42 @@ namespace Proyecto_Final_C_Sharp
         Message mensajes = new Message();
         List<Message> listaMensajes = null;
         SqlConnection connection = null;
+        User usuario = new User();
+        string Username = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             connection = DAL.DBConnection.ConnectLearnifyDB();
             listaMensajes = mensajes.Read(connection);
+            if (Request.Cookies["myusrname"] != null)
+            {
+                Username = Request.Cookies["myusrname"].Value;
+            }
             for (int i =0; i < listaMensajes.Count; i++)
             {
                 if (Request.QueryString["topic"] == listaMensajes[i].Topic)
                 {
-                contenedorMensajesTest.Controls.Add(new Literal() { Text=$@"<div class='mensajeIndividual mensajeIndividualOther'>
-                <small class='nameForumPerson'>{listaMensajes[i].UserEmail}</small> - <small class='dateForumPost'>{listaMensajes[i].CreationDate}</small>
+                if (Username == usuario.Find(connection, listaMensajes[i].UserEmail).Username)
+                    {
+                        contenedorMensajesTest.Controls.Add(new Literal() { Text = $@"<div class='mensajeIndividual mensajeIndividualUser'>
+                <small class='nameForumPerson '>Tu</small> - <small class='dateForumPost'>{listaMensajes[i].CreationDate}</small>
                 <div class='messageContent'>
                     {listaMensajes[i].MessageText}
                 </div>
-            </div>" });
+                </div>" });
+                    }
+
+                    else
+                    {
+                contenedorMensajesTest.Controls.Add(new Literal() { Text=$@"<div class='mensajeIndividual mensajeIndividualOther'>
+                <small class='nameForumPerson'>{usuario.Find(connection,listaMensajes[i].UserEmail).Username}</small> - <small class='dateForumPost'>{listaMensajes[i].CreationDate}</small>
+                <div class='messageContent'>
+                    {listaMensajes[i].MessageText}
+                </div>
+                </div>" });
+                    }
+
+
+
                 }
             }
             Label1.Text = $"Foro: {Request.QueryString["topic"]}";
