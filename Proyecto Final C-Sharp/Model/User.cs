@@ -108,6 +108,26 @@ namespace Proyecto_Final_C_Sharp.Model
             return user;
         }
 
+        public User FindUsername(SqlConnection connection, string email)
+        {
+            User user = null;
+            SqlDataReader reader = DBUsers.Find(connection, email);
+            if (reader.Read())
+            {
+                string nEmail, nUsername, nPassword, nFirstName, nLastName;
+                nEmail = (string)reader["email"];
+                nUsername = (string)reader["username"];
+                nPassword = (string)reader["password"];
+                nFirstName = (string)reader["firstName"];
+                if (reader["lastName"] == DBNull.Value) nLastName = null;
+                else nLastName = (string)reader["lastName"];
+                user = new User(nEmail, nUsername, nPassword, nFirstName, nLastName);
+            }
+            reader.Close();
+
+            return user;
+        }
+
         //---OTHER TABLES---
 
         //Messages
