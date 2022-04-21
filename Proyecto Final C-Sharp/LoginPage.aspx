@@ -33,7 +33,7 @@
             </div>
             <form class="formRegistro" runat="server">
               <div class="form-group">
-                <label for="inputEmail">Usuario</label>
+                <label for="inputEmail">Nombre Usuario</label>
                 <input type="text" class="form-control" id="IdUsername" placeholder="usuarioExample" runat="server"/>
               </div>
               <div class="form-group">
@@ -41,7 +41,7 @@
                 <input type="password" class="form-control" aria-describedby="contraHelp" id="IdPassword" placeholder="**********"/>
               </div>
               <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+                <input type="checkbox" class="form-check-input" id="checkCookie" runat="server"/>
                 <label class="form-check-label" for="connected">Recuerdame</label>
               </div>
               <button id="idInicio" type="submit" onclick="Login_Submit()" class="btn btn-primary">INICIAR SESIÓN</button>

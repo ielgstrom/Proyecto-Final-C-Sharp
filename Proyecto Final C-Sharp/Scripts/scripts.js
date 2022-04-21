@@ -1,14 +1,7 @@
 function Login_Submit()
 {
-    if ((document.getElementById("IdUsername").value != "pepe") || (document.getElementById("IdPassword").value != "123456789A"))
-    {
-        alert("usuario o contraseña incorrectos, prueba con 'pepe' y '123456789A'");
-    }
-    else
-    {
-        createCookie();
-        onCookie();
-    }
+    createCookie();
+    onCookie();
 }
 
 function onCookie(){
