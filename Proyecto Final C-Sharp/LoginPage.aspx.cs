@@ -11,19 +11,18 @@ namespace Proyecto_Final_C_Sharp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            comprobacionLog();
         }
 
         public void comprobacionLog(){
             string username = Request["IdUsername"];
-            string pass = Request["pass"];
+            string pass = Request["IdPassword"];
 
             using (SqlConnection connection = DAL.DBConnection.ConnectLearnifyDB())
             {
-                connection.Open();
                 string query = "SELECT COUNT(1) FROM Users WHERE username=@username AND password=@password";
                 SqlCommand sqlCmd = new SqlCommand(query, connection);
-                sqlCmd.Parameters.AddWithValue("@username", IdUsername);
+                sqlCmd.Parameters.AddWithValue("@username", username);
                 sqlCmd.Parameters.AddWithValue("@password", pass);
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
 
@@ -31,7 +30,9 @@ namespace Proyecto_Final_C_Sharp
                 {
                     Session["username"] = username;
                     Response.Redirect("MainPage.aspx");
-                }
+                } 
+               
+              
                 //else { lblErrorMessage.Visible = true; }
                 
             }
