@@ -18,18 +18,24 @@ namespace Proyecto_Final_C_Sharp
 
         public void comprobacionLog(){
             string username = Request["IdUsername"];
-            string pass = Request["IdPassword"];
+            string pass = Request["inputContra"];
 
             using (SqlConnection connection = DAL.DBConnection.ConnectLearnifyDB())
             {
                 User user = new User();
                 user = user.FindUsername(connection, username);
 
-                if (user == null) ; //USER NO EXISTE
+                if (user == null); //USER NO EXISTE
                 else
                 {
-                    if (user.Password != pass) ; //CONTRASEÑA MAL
-                    else; //TODO OK
+                    if (user.Password != pass)
+                    {
+                        Console.WriteLine("NO SON IGUALES");
+                    }//CONTRASEÑA MAL
+                    else
+                    {
+                        Response.Redirect("MainPage.aspx");
+                    }; //TODO OK
                 }
                 
                 //else { lblErrorMessage.Visible = true; }

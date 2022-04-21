@@ -4,10 +4,7 @@ function Login_Submit()
     onCookie();
 }
 
-function onCookie(){
-    document.getElementById('idInicio').innerHTML = "PETICIÓN";
-    document.getElementById('idInicio').setAttribute("data-bs-target", "#petitionModal");
-    
+function onCookie(){    
     document.getElementById('idRegistro').innerHTML = "CERRAR SESIÓN";
     document.getElementById('idRegistro').removeAttribute("data-bs-whatever");
     document.getElementById('idRegistro').removeAttribute("data-bs-target");

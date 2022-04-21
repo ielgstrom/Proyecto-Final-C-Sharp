@@ -38,7 +38,7 @@
               </div>
               <div class="form-group">
                 <label for="inputContra">Contraseña</label>
-                <input type="password" class="form-control" aria-describedby="contraHelp" id="IdPassword" placeholder="**********"/>
+                  <input runat="server" type="password" class="form-control" aria-describedby="contraHelp" id="inputContra" placeholder="********"/>
               </div>
               <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="checkCookie" runat="server"/>
