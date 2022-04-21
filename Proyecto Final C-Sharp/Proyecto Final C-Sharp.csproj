@@ -110,7 +110,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Foro.aspx" />
@@ -199,13 +198,6 @@
     <Compile Include="DAL\DBMessages.cs" />
     <Compile Include="DAL\DBPlaylists.cs" />
     <Compile Include="DAL\DBUsers.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Foro.aspx.cs">
       <DependentUpon>Foro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

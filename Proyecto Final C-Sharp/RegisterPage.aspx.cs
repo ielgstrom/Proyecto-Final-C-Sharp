@@ -18,10 +18,12 @@ namespace Proyecto_Final_C_Sharp
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // abrimos conexion con la BBDD
             connection = DAL.DBConnection.ConnectLearnifyDB();
             mensajeError.Text = " ";
         }
 
+        //revisamos los datos del usuario y entramos a la pagina principal
         protected void btSignUp_Click(object sender, System.EventArgs e)
         {
             comprobarDatos();
@@ -67,6 +69,7 @@ namespace Proyecto_Final_C_Sharp
                                 {
                                     usuario = new User(email, nombreUsuario, Seguridad.Encriptar(password), nombre, null);
                                     usuario.Insert(connection);
+                                    Response.Redirect("MainPage.aspx");
                                 }
                                 else
                                     mensajeError.Text = "Acepta las condiciones y la politica de privacidad";

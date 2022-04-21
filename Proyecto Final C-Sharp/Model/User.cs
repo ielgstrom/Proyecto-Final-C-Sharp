@@ -120,7 +120,7 @@ namespace Proyecto_Final_C_Sharp.Model
             while (reader.Read())
             {
                 int nId;
-                string nUserEmail, nMessageText;
+                string nUserEmail, nMessageText, nTopic;
                 DateTime nCreationDate;
                 int? nRespondsToId;
 
@@ -130,8 +130,9 @@ namespace Proyecto_Final_C_Sharp.Model
                 nMessageText = (string)reader["messageText"];
                 if (reader["respondsToId"] == DBNull.Value) nRespondsToId = null;
                 else nRespondsToId = (int?)reader["respondsToId"];
+                nTopic = (string)reader["topic"];
 
-                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId));
+                messages.Add(new Message(nId, nUserEmail, nCreationDate, nMessageText, nRespondsToId, nTopic));
             }
 
             reader.Close();

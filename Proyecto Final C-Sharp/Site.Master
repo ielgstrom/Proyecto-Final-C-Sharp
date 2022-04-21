@@ -33,6 +33,21 @@
       rel="stylesheet"
     />
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <script>
+        function openNav() {
+            document.getElementById("sideNavigation").style.marginTop = "40px";
+            document.getElementById("sideNavigation").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sideNavigation").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+
 </head>
 <body>
             <style>
@@ -60,39 +75,36 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+     
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+            <div class="containerNavBar">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/Default.aspx" style="font-family: 'Open Sans'; font-weight: 800;">
-                        <img src="/imagenes/iconoApp.png" alt="Learnify" height="30" width="30" style="margin-top: -5px">
+                    <a class="navbar-brand" href="#" onclick="openNav()" style="margin-top: -5px;">
+                        <svg width="30" height="30" id="icoOpen"">
+                            <path d="M0,5 30,5" stroke="white" stroke-width="3"/>
+                            <path d="M0,14 30,14" stroke="white" stroke-width="3"/>
+                            <path d="M0,23 30,23" stroke="white" stroke-width="3"/>
+                        </svg>
                     </a>
-                    <a class="navbar-brand" runat="server" href="~/Default.aspx" style="font-family: 'Open Sans'; font-weight: 800;">
+                    <a class="navbar-brand" runat="server" href="~/MainPage.aspx" style="font-family: 'Open Sans'; font-weight: 800;">
                         LEARNIFY
                     </a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="input-icons">
-                            <i class="fa fa-search icon"></i>
-                            <input type="text" class="form-control input-field" placeholder="Buscar" style="">
-                        </li>
-                        <li><a runat="server" href="~/About.aspx">Sobre nosotros</a></li>
-                        <li><a runat="server" href="~/Contact.aspx">Contacto</a></li>
-                    </ul>
-                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="input-icons">
+                        <i class="fa fa-search icon"></i>
+                        <input type="text" class="form-control input-field" placeholder="Buscar" style="">
+                    </li>
+                    <li><a runat="server" href="~/About.aspx">Sobre nosotros</a></li>
+                    <li><a runat="server" href="~/Contact.aspx">Contacto</a></li>
+                </ul>
             </div>
         </div>
-        <div class="container-fluid body-content">
-            
+
+        <div class="container-fluid body-content" id="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            
         </div>
 
     </form>
