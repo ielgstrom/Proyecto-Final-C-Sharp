@@ -4,7 +4,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ChildContent2" runat="server">
     <div class="testingg">
         <div class="headerForum">
-            <h1>Nombre del foro</h1>
+            <%--<h1>Nombre del foro</h1>--%>
+            <asp:Label ID="Label1" runat="server" CssClass="titleForo"></asp:Label>
             <asp:Button ID="ButtonJoin" runat="server" Text="Unirse" OnClick="ButtonJoin_Click" BackColor="#8888f3" Height="30px" Width="120px" CssClass="btn btn-primary clasbuton" />
         </div>
     </div>
@@ -25,6 +26,10 @@
         </asp:Panel>
     </div>
     <style>
+        .titleForo{
+            font-size:3rem;
+            font-weight:300;
+        }
         .messageContent{
             font-size:1.7rem;
         }
@@ -57,6 +62,7 @@
              display: inline-flex;
              width: 100%;
             align-items: flex-end;
+                margin-top: 15px;
         }
         .testingg{
 
@@ -67,7 +73,9 @@
         }
         .PageForChat{
             border: 1px solid black;
-            width: 100%;
+            
+    width: calc(100vw - 345px);
+
             height: calc(100vh - 150px);
             position: relative;
             background: rgb(48 60 201 / 65%);

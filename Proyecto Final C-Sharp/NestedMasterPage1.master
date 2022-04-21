@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NestedMasterPage1.master.cs" Inherits="Proyecto_Final_C_Sharp.NestedMasterPage1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-   <!-- <style>
-        .sidenav {
+  <style>
+        ./*sidenav {
           height: 100%;
           width: 180px;
           position: fixed;
@@ -12,7 +12,7 @@
           opacity: 0.95;
           overflow-x: hidden;
           padding-top: 60px;
-        }
+        }*/
         .main {
           padding-left: 180px; /* Same as the width of the sidenav */
           height: calc(100vh - 50px);
@@ -45,7 +45,8 @@
         }
         .downLink{
             position: absolute;
-            top: calc(100% - 60px);
+            top: calc(100% - 100px);
+            left: 30%;
         }
         a:hover{
             color:white;
@@ -72,8 +73,8 @@
             position:absolute;
             padding: 0px 20px;
             overflow:auto; 
-            z-index:1;
-            width:calc(100% - 180px);
+            z-index:0;
+            width:auto;
         }
         ::-webkit-scrollbar {
             width: 10px;
@@ -86,12 +87,15 @@
             background: #888;
             border-radius:10px;
         }
-    </style> -->
+    </style> 
 
     <div id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#">Inicio</a>
-      <a href="LikedList.aspx">LikedList</a>
+      <a class="upLink" href="MainPage.aspx">Inicio</a>
+        <a class="upLink likedlist" href="LikedList.aspx">Me gusta</a>
+        <div class="listForos">
+            <asp:Panel CssClass="listForos" ID="listForos" runat="server"></asp:Panel>
+        </div>
       <a class="downLink"  href="Perfil.aspx">Perfil</a>
     </div>
 
@@ -103,20 +107,7 @@
         <div class="listForos">
             <a class="forosLinks" href="Foro.aspx">Foros</a>
             <a class="forosLinks" href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-            <a class="forosLinks"href="Foro.aspx">Foros</a>
-
-            </div>
+        </div>
         <a class="downLink"  href="Perfil.aspx">Perfil</a>
    </div>-->
 

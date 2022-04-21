@@ -21,13 +21,17 @@ namespace Proyecto_Final_C_Sharp
             listaMensajes = mensajes.Read(connection);
             for (int i =0; i < listaMensajes.Count; i++)
             {
-            contenedorMensajesTest.Controls.Add(new Literal() { Text=$@"<div class='mensajeIndividual mensajeIndividualOther'>
+                if (Request.QueryString["topic"] == listaMensajes[i].Topic)
+                {
+                contenedorMensajesTest.Controls.Add(new Literal() { Text=$@"<div class='mensajeIndividual mensajeIndividualOther'>
                 <small class='nameForumPerson'>{listaMensajes[i].UserEmail}</small> - <small class='dateForumPost'>{listaMensajes[i].CreationDate}</small>
                 <div class='messageContent'>
                     {listaMensajes[i].MessageText}
                 </div>
             </div>" });
+                }
             }
+            Label1.Text = $"Foro: {Request.QueryString["topic"]}";
         }
 
         protected void ButtonJoin_Click(object sender, EventArgs e)
@@ -46,7 +50,7 @@ namespace Proyecto_Final_C_Sharp
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Message nuevoMensaje = new Message("prueba@psd.com", InputForo.Text, "Nose");
+            Message nuevoMensaje = new Message("prueba@psd.com", InputForo.Text, Request.QueryString["topic"]);
             nuevoMensaje.Insert(connection);
             Response.Redirect(Request.RawUrl);
         }
