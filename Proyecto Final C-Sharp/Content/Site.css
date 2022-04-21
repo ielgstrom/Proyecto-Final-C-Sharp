@@ -31,7 +31,7 @@ textarea {
     }
 }
 
-/*Pagina principal styles*/
+/*Pagina principal*/
 
 .logoPrincipal {
     margin-top: 60px;
@@ -83,9 +83,9 @@ textarea {
     background-size: cover;
 }
 
-/*End pagina principal styles*/
+/*End pagina principal*/
 
-/*Site Master styles*/
+/*Site Master*/
 
 .input-icons i {
     position: absolute;
@@ -115,7 +115,8 @@ textarea {
     margin-left: 40px;
 }
 
-/*End Site Master styles*/
+/*End Site Master*/
+
 /*Login and Register*/
 .contenedorLogin {
     align-items: center;
@@ -170,7 +171,7 @@ textarea {
 
 /*End login and register*/
 
-/*Register style*/
+/*Register*/
 
 .formRegistro {
     margin-left: 25%;
@@ -198,9 +199,9 @@ textarea {
     vertical-align: middle;
 }
 
-/*End register style*/
+/*End register*/
 
-/*Login style*/
+/*Login*/
 
 #formLogin {
     margin-left: 120px;
@@ -223,9 +224,232 @@ textarea {
     font-size: 25px;
     color: #337ab7;
 }
-/*End login style*/
+/*End login*/
 
-/*Pruebas desplegable*/
+/*Main Page*/
+    #input-field {
+        display: none;
+    }
+
+    #loader {
+        margin: 0.25em;
+        z-index: 9999;
+        width: 10rem;
+        height: 0.5rem;
+    }
+
+    #main-area {
+        margin-top: 1rem;
+        padding: 1.4rem 1rem;
+        border-radius: 0.4rem;
+        background-color: #2f52c3;
+    }
+
+    #loader-fade-text {
+        animation: fade 2s ease-in infinite, rgb 5s linear infinite;
+    }
+
+    .bar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .overlay-buttons {
+        color: white;
+        transition-duration: 0.5s;
+        padding: 0.25em;
+        float: right;
+    }
+
+    .overlay-buttons:hover,
+    #close:hover {
+        color: black !important;
+    }
+
+    #videoPlayer {
+        width: 65vw;
+        height: calc((9/16) * 65vw);
+        border-style: hidden;
+        border-radius: 0.2em;
+    }
+
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: auto;
+        cursor: default;
+    }
+
+    #overlay-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 50px;
+        color: white;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+
+    .containerPlayer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .child {
+        /* Center vertically */
+        position: absolute;
+        top: 50%;
+    }
+
+    #expand-box {
+        background-color: #d4d4d4;
+        border: 1px solid #1a1a1a;
+        border-radius: 0.2rem;
+        margin: 1rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        /* Hidden by default */
+        display: none;
+        /* Stay in place */
+        position: fixed;
+        /* Sit on top */
+        z-index: 1;
+        left: 0;
+        top: 0;
+        /* Full width */
+        width: 100%;
+        /* Full height */
+        height: 100%;
+        /* Enable scroll if needed */
+        overflow: auto;
+        /* Fallback color */
+        background-color: rgb(0, 0, 0);
+        /* Black w/ opacity */
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        /* 15% from the top and centered */
+        margin: 15% auto;
+        padding: 10px;
+        border: 1px solid #888;
+        border-radius: 0.2em;
+        width: 55%;
+    }
+
+    .no-select,
+    .overlay-buttons {
+        user-select: none;
+        /* iOS Safari */
+        -webkit-touch-callout: none;
+        /* Safari */
+        -webkit-user-select: none;
+        /* Old versions of Firefox */
+        -moz-user-select: none;
+        /* Internet Explorer/Edge */
+        -ms-user-select: none;
+    }
+
+    .transparent-button {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+    }
+
+    #options-div {
+        margin: 1rem;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+
+    #options-button {
+        color: white;
+        transition-duration: 1s;
+        border: 3px solid #a56de2;
+        border-radius: 0.4rem;
+        padding: 0.5rem;
+        float: right;
+    }
+
+    #options-dropdown {
+        border-radius: 0.2rem;
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: rgb(249, 249, 249);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        bottom: 100%;
+    }
+
+    .options {
+        cursor: pointer;
+        border-radius: 0.2rem;
+    }
+
+    #options-dropdown .options {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    #options-dropdown .options:hover {
+        border: 3px solid #a56de2;
+    }
+
+    #options-div:hover #options-dropdown {
+        display: block;
+    }
+
+    #options-div:hover #options-button {
+        color: black;
+    }
+
+    .bar .btnPlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: rgba(0,0,0,0.3);
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .bar .btnPlay:hover {
+        background-color: rgba(0,0,0,0.5);
+    }
+
+/*End Main Page*/
+
+/*Menu desplegable*/
 
     .sidenav {
         height: 100%;
@@ -291,5 +515,4 @@ a svg {
     transition: all .5s ease;
 }
 
-
-/*End pruebas desplegable*/
+/*End menu desplegable*/
