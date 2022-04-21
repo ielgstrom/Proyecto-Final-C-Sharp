@@ -63,6 +63,7 @@
         }
         .mainProfileContent{
             padding: 30px 70px;
+                width: 1302px;
         }
     </style>
 </asp:Content>

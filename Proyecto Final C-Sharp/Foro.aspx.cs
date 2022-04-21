@@ -32,6 +32,7 @@ namespace Proyecto_Final_C_Sharp
                 }
             }
             Label1.Text = $"Foro: {Request.QueryString["topic"]}";
+            SetFocus(InputForo);
         }
 
         protected void ButtonJoin_Click(object sender, EventArgs e)
