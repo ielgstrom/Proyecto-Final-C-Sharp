@@ -111,8 +111,12 @@ textarea {
 
 .content {
     position: absolute;
-    min-height: 100%;
+    height: calc(100vh - 50px);
     margin-left: 40px;
+    padding: 0px 20px;
+    overflow: auto;
+    z-index: 0;
+    width: auto;
 }
 
 /*End Site Master*/

@@ -4,10 +4,7 @@ function Login_Submit()
     onCookie();
 }
 
-function onCookie(){
-    document.getElementById('idInicio').innerHTML = "PETICIÓN";
-    document.getElementById('idInicio').setAttribute("data-bs-target", "#petitionModal");
-    
+function onCookie(){    
     document.getElementById('idRegistro').innerHTML = "CERRAR SESIÓN";
     document.getElementById('idRegistro').removeAttribute("data-bs-whatever");
     document.getElementById('idRegistro').removeAttribute("data-bs-target");
@@ -41,11 +38,8 @@ function deleteCookieElvis(){
     document.cookie = "myusrname =" + user + "; expires= Thu, 21 Aug 2014 20:00:00 UTC; path=/ "
     document.cookie = "mypswd =" + passw + "; expires= Thu, 21 Aug 2014 20:00:00 UTC; path=/ "
 
-    document.getElementById('idInicio').innerHTML = "INICIAR SESSION";
-
     document.cookie.value;
 }
-
 
 function checkCookie()
 {

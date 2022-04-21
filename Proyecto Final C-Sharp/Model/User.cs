@@ -108,10 +108,14 @@ namespace Proyecto_Final_C_Sharp.Model
             return user;
         }
 
-        public User FindUsername(SqlConnection connection, string email)
+        //FindUsername
+        //Returns the user with the specified username
+        //Returns null if not found
+        public User FindUsername(SqlConnection connection, string userName)
         {
+            if (userName == null || userName == "") return null;
             User user = null;
-            SqlDataReader reader = DBUsers.Find(connection, email);
+            SqlDataReader reader = DBUsers.FindUsername(connection, userName);
             if (reader.Read())
             {
                 string nEmail, nUsername, nPassword, nFirstName, nLastName;
