@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using Proyecto_Final_C_Sharp.Model;
+
 namespace Proyecto_Final_C_Sharp
 {
     public partial class LoginPage : System.Web.UI.Page
@@ -20,19 +22,16 @@ namespace Proyecto_Final_C_Sharp
 
             using (SqlConnection connection = DAL.DBConnection.ConnectLearnifyDB())
             {
-                string query = "SELECT COUNT(1) FROM Users WHERE username=@username AND password=@password";
-                SqlCommand sqlCmd = new SqlCommand(query, connection);
-                sqlCmd.Parameters.AddWithValue("@username", username);
-                sqlCmd.Parameters.AddWithValue("@password", pass);
-                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                User user = new User();
+                user = user.FindUsername(connection, username);
 
-                if (count == 1)
+                if (user == null) ; //USER NO EXISTE
+                else
                 {
-                    Session["username"] = username;
-                    Response.Redirect("MainPage.aspx");
-                } 
-               
-              
+                    if (user.Password != pass) ; //CONTRASEÑA MAL
+                    else; //TODO OK
+                }
+                
                 //else { lblErrorMessage.Visible = true; }
                 
             }

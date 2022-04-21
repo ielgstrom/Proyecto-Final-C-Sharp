@@ -202,6 +202,26 @@ namespace Proyecto_Final_C_Sharp.DAL
             return reader;
         }
 
+        //Author
+        //Returns the user that wrote the message
+        public static SqlDataReader Author(SqlConnection connection, string userEmail)
+        {
+            string query = @"SELECT * FROM Users AS u
+                            WHERE u.email = @pUserEmail";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            //Create sql parameters
+            SqlParameter pUserEmail = new SqlParameter("@pUserEmail", System.Data.SqlDbType.NVarChar, 320);
+            pUserEmail.Value = userEmail;
+
+            //Add sql parameters
+            command.Parameters.Add(pUserEmail);
+
+            //Execute query
+            SqlDataReader reader = command.ExecuteReader();
+            return reader;
+        }
+
 
     }
 }
