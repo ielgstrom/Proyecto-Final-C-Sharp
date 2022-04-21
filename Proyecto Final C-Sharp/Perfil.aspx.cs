@@ -13,5 +13,10 @@ namespace Proyecto_Final_C_Sharp
         {
 
         }
+
+        protected void CloseSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PantallaInicial.aspx");
+        }
     }
 }
