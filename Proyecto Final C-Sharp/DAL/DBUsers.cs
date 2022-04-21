@@ -164,6 +164,21 @@ namespace Proyecto_Final_C_Sharp.DAL
             return reader;
         }
 
+        public static SqlDataReader FindUsername(SqlConnection connection, string userName)
+        {
+            //Create the query and the sql command
+            string query = "SELECT * FROM Users WHERE userName = @pUsername";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            //Create and add parameter
+            SqlParameter pUsername = new SqlParameter("@pUsername", System.Data.SqlDbType.NVarChar, 50);
+            pUsername.Value = userName;
+            command.Parameters.Add(pUsername);
+
+            SqlDataReader reader = command.ExecuteReader();
+            return reader;
+        }
+
 
     }
 }

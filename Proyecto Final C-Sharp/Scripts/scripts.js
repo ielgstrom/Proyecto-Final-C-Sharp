@@ -23,8 +23,8 @@ function createCookie()
 
 function setcookie(){
 
-    document.cookie="myusrname="+"pepe"+";path/";
-    document.cookie="mypswd="+"123456789A"+";path";
+    document.cookie = "myusrname=" + document.getElementById('IdUsername').value + ";path/";
+    document.cookie = "mypswd=" + document.getElementById('IdPassword').value +";path";
 }
 
 

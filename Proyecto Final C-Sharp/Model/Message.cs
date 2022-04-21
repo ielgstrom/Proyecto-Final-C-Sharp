@@ -178,5 +178,24 @@ namespace Proyecto_Final_C_Sharp.Model
             return topics;
         }
 
+        public User Author(SqlConnection connection)
+        {
+            User user = null;
+            SqlDataReader reader = DBMessages.Author(connection, userEmail);
+            if (reader == null) return null;
+
+            reader.Read();
+            string nEmail, nUsername, nPassword, nFirstName, nLastName;
+            nEmail = (string)reader["email"];
+            nUsername = (string)reader["username"];
+            nPassword = (string)reader["password"];
+            nFirstName = (string)reader["firstName"];
+            if (reader["lastName"] == DBNull.Value) nLastName = null;
+            else nLastName = (string)reader["lastName"];
+            user = new User(nEmail, nUsername, nPassword, nFirstName, nLastName);
+
+            return user;
+        }
+
     }
 }
