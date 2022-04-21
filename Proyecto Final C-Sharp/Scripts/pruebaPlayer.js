@@ -7,9 +7,9 @@
     // player iframe
     const $iframe = $("iframe");
     // input where user enters YouTube url to play
-    const $inputField = $("#input-field");
+    const $inputField = $(".inputField");
     // button to play YouTube video url entered
-    const $playButton = $("#play");
+    const $playButton = $(".btnPlay");
     // overlay that video player iframe is shown
     const $overlay = $("#overlay");
     // notification that shows errors and information
@@ -67,7 +67,6 @@
         ) {
             $expandBox.hide();
             $overlay.show();
-            // $overlay.css("display", "block");
         } else {
             loadVideo(videoId);
         }
@@ -80,8 +79,6 @@
         $overlay.show();
         $expandBox.hide();
         $loader.show();
-        // var valuesAtLoad = [document.querySelector("#load-fullscreen").value, document.querySelector("#private-mode").value];
-        // expandButton.disabled = true;
         if ($privateMode()) {
             // sets the video player iframe's url to a youtube privacy-enhanced url(video doesn't show up on user's youtube search history) if the user has enabled Privacy Mode
             $iframe.attr(
@@ -118,26 +115,13 @@
             } else {
                 alert("Unable to open video in full screen");
             }
-        } else {
-            console.warn(
-                "Error: unable to toggle full screen" + "\n" + "Reason: no URL found"
-            );
-            alert(
-                "We are unable to toggle full screen if a video hasn't been loaded" +
-                "\n" +
-                "Please enter a URL first"
-            );
-        }
+        } 
     }
 
     // resets numerous things for the player
     function reset() {
-        // allows the user to reset the player if they entered an invalid url or ran into another problem
-        url = "";
         $iframe.attr("src", "");
         // expandButton.disabled = true;
-        $inputField.removeClass();
-        $inputField.focus();
         // document.querySelector("#private-mode").checked = false;
         $privateModeButton.data("enabled", false);
         $privateModeButton.attr(
@@ -168,16 +152,6 @@
                 ", left=" +
                 left
             );
-        } else {
-            console.warn(
-                "Error: unable to open video in new tab" + "\n" + "Reason: no URL found"
-            );
-            alert(
-                "We can't open video in new tab because you haven't entered a URL" +
-                "\n" +
-                "Play a video and try again"
-            );
-            // getVideoURL();
         }
     }
 
@@ -187,30 +161,6 @@
         $expandBox.hide();
         $thumbnail.attr("src", "");
         reset();
-    }
-
-    // Minimizes video overlay
-    function minimizeOverlay() {
-        // inputField.focus();
-        // inputField.select();
-        $overlay.hide();
-        if (isLoaded()) {
-            $expandBox.show();
-            if (
-                $thumbnail.attr("src") !==
-                `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`
-            ) {
-                $thumbnail.attr(
-                    "src",
-                    `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`
-                );
-            }
-            // expandButton.disabled = false;
-            // expandButton.focus();
-        } else {
-            $expandBox.hide();
-            $thumbnail.attr("src", "");
-        }
     }
 
        // clears notification
@@ -264,7 +214,6 @@
 
     // hide the loader every time a video loads in the iframe
     $iframe.on("load", function (e) {
-        e.preventDefault();
         $loader.hide();
     });
 
@@ -277,19 +226,10 @@
 
     // show the overlay whe the user clicks on the video expand thumbnail
     $expandBox.on("click", function (e) {
-        e.preventDefault();
         $overlay.show();
         // expandButton.disabled = "true";
         $expandBox.hide();
         $thumbnail.attr("src", "");
-    });
-
-    // submit URL form when the user presses enter in the input field
-    $inputField.on("keydown", function (e) {
-        e.preventDefault();
-        if (e.key === "Enter") {
-            $form.submit();
-        }
     });
 
     // option click handler
@@ -336,15 +276,17 @@
         }
     });
 
-    // select the input field when the user clicks on it
-    $inputField.on("click", function (e) {
-        e.preventDefault();
-        $inputField.select();
-    });
+    /*
+    var hijosPodcasts = document.getElementById("podcastsVideos").childElementCount;
+    for (var i = 1; i < hijosPodcasts; i++) {
+        // submit the URL form when the user clicks on the play button
+        $playButton[i].on("click", function (e) {
+            $form.submit();
+        });
+    }
+    */
 
-    // submit the URL form when the user clicks on the play button
     $playButton.on("click", function (e) {
-        e.preventDefault();
         $form.submit();
     });
 
@@ -358,12 +300,6 @@
     $("button:contains('check_box_outline_blank')").on("click", function (e) {
         e.preventDefault();
         openFullscreen();
-    });
-
-    // overlay minimize video button
-    $("button:contains('minimize')").on("click", function (e) {
-        e.preventDefault();
-        minimizeOverlay();
     });
 
     // close shortcuts modal button
