@@ -31,7 +31,6 @@ namespace Proyecto_Final_C_Sharp
                     value='{url}'/>
                     <img id='pruebaImg' runat='server' src='https://i.ytimg.com/vi/{idURL}/hqdefault.jpg' height='170' width='250'/>
                     <button class='btnPlay' id='play{i}' title='play video url' value='input-field{i}'><i class='fa fa-solid fa-play'></i></button>
-                    <label>{url}</label>
                     </div>" });
             }
         }
