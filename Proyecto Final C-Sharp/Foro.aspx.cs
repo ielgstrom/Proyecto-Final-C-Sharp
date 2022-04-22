@@ -25,6 +25,11 @@ namespace Proyecto_Final_C_Sharp
             {
                 Username = Request.Cookies["myusrname"].Value;
             }
+            else
+            {
+                InputForo.Enabled = false; //Medida de preaución: no poder escribir si no hay usuario en las cookies
+                Button1.Enabled = false; //También el botón
+            }
             for (int i =0; i < listaMensajes.Count; i++) //Hago un loop por todos los mensajes
             {
                 if (Request.QueryString["topic"] == listaMensajes[i].Topic) //Filtra por query el topic del foro
@@ -51,20 +56,6 @@ namespace Proyecto_Final_C_Sharp
             }
             Label1.Text = $"Foro: {Request.QueryString["topic"]}"; //Cambiar el titulo del foro
             SetFocus(InputForo); //Al hacer refresh que haga autofocus al input
-        }
-
-        protected void ButtonJoin_Click(object sender, EventArgs e)
-        {
-            if (ButtonJoin.Text == "Unirse")
-            {
-                ButtonJoin.Text = "Salir";
-                InputForo.Enabled = true;
-            }
-            else if (ButtonJoin.Text == "Salir")
-            {
-                ButtonJoin.Text = "Unirse";
-                InputForo.Enabled = false;
-            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
