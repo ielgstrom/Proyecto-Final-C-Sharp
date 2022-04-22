@@ -24,15 +24,6 @@ namespace Proyecto_Final_C_Sharp
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control ButtonJoin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonJoin;
-
-        /// <summary>
         /// Control contenedorMensajesTest.
         /// </summary>
         /// <remarks>
