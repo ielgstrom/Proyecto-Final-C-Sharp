@@ -116,7 +116,7 @@ textarea {
     padding: 0px 20px;
     overflow: auto;
     z-index: 0;
-    width: auto;
+    width: 100% !important;
 }
 
 /*End Site Master*/
@@ -300,7 +300,7 @@ textarea {
         padding: 1.4rem 1rem;
         border-radius: 0.4rem;
         /*background-color: #2f52c3;*/
-        margin-left: 7%;
+        /*margin-left: 7%;*/
     }
 
     #loader-fade-text {
@@ -309,8 +309,7 @@ textarea {
 
     .bar {
         display: flex;
-        justify-content: space-between;
-        margin-right: 10%;
+        margin-right: 5%;
     }
 
     .overlay-buttons {
