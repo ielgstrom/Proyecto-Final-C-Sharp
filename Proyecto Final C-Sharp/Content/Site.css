@@ -60,7 +60,7 @@ textarea {
     margin-top: 300px;
 }
 
-#btnRegistro {
+.brRegistrarseCss {
     background-color: black;
     color: white;
     font-family: 'HK Grotesk', sans-serif;
@@ -70,7 +70,7 @@ textarea {
     margin-left: 80px;
 }
 
-#btnEntrar {
+.brEntrarCss {
     font-family: 'HK Grotesk', sans-serif;
     font-weight: bold;
     height: 35px;

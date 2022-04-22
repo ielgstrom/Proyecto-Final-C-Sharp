@@ -11,9 +11,9 @@ namespace Proyecto_Final_C_Sharp
 {
     public partial class LoginPage : System.Web.UI.Page
     {
+        bool esCorrecto = false;
         protected void Page_Load(object sender, EventArgs e)
-        {
-            comprobacionLog();
+        { 
         }
 
         public void comprobacionLog(){
@@ -25,22 +25,34 @@ namespace Proyecto_Final_C_Sharp
                 User user = new User();
                 user = user.FindUsername(connection, username);
 
-                if (user == null); //USER NO EXISTE
+                if (user == null)
+                {
+                    mensajeError.Text = "El nombre de usuario ya existe, escoge otro";
+                    //USER NO EXISTE
+                }
                 else
                 {
                     if (user.Password != pass)
                     {
-                        Console.WriteLine("NO SON IGUALES");
+                        mensajeError.Text = "El nombre de usuario ya existe, escoge otrox2";
                     }//CONTRASEÑA MAL
                     else
                     {
+                        HttpCookie myusrname = new HttpCookie("myusrname", username);
+
+                        Response.Cookies.Add(myusrname);
                         Response.Redirect("MainPage.aspx");
-                    }; //TODO OK
+                    }//TODO OK
                 }
                 
                 //else { lblErrorMessage.Visible = true; }
                 
             }
+        }
+
+        protected void btIniciarSesion_Click(object sender, EventArgs e)
+        {
+            comprobacionLog();
         }
     }
 }

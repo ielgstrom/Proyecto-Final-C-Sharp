@@ -17,11 +17,8 @@ namespace Proyecto_Final_C_Sharp
         private string username;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["myusrname"] == null)
-            {
-                //NO COOKIE 12345Abcd#
-            }
-
+            //Request connection an user
+            //Requires info from both DB and cookie
             connection = DAL.DBConnection.ConnectLearnifyDB();
             user = new User();
 
@@ -33,7 +30,7 @@ namespace Proyecto_Final_C_Sharp
 
             if (user == null)
             {
-                //Not in DB
+                //User not in DB
                 Response.Redirect("PantallaInicial.aspx");
             }
             if (!IsPostBack)TextBoxName.Text = user.FirstName;

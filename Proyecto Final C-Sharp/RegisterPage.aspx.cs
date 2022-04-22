@@ -69,7 +69,7 @@ namespace Proyecto_Final_C_Sharp
                                 {
                                     usuario = new User(email, nombreUsuario, Seguridad.Encriptar(password), nombre, null);
                                     usuario.Insert(connection);
-                                    Response.Redirect("MainPage.aspx");
+                                    Response.Redirect("LoginPage.aspx");
                                 }
                                 else
                                     mensajeError.Text = "Acepta las condiciones y la politica de privacidad";
