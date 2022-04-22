@@ -124,7 +124,7 @@ textarea {
     padding: 0px 20px;
     overflow: auto;
     z-index: 0;
-    width: 100% !important;
+    /*width: 100% !important;*/
 }
 
 /*End Site Master*/
