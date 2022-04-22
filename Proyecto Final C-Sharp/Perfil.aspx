@@ -10,34 +10,36 @@
         <div class="col-md-6">
             <div class="elementmargin">
                 <asp:Label Text="Nombre" runat="server" CssClass="ProfileInputText"/>
-                <asp:TextBox runat="server" CssClass="textAreaProfileleft"/>
+                <asp:TextBox runat="server" CssClass="textAreaProfileleft" ID="TextBoxName"/>
             </div>
             
             <div class="elementmargin">
-                <asp:Label Text="Correo" runat="server" CssClass="ProfileInputText"/>
-                <asp:TextBox runat="server" CssClass="textAreaProfileleft"/>
             </div>
         </div>
         <div class="col-md-6">
             <div class="elementmargin">
                 <asp:Label Text="Antigua Contraseña" runat="server" CssClass="ProfileInputText"/>
-                <asp:TextBox runat="server" CssClass="textAreaProfileright"/>
+                <asp:TextBox runat="server" CssClass="textAreaProfileright" ID="TextBoxOldPassw"/>
             </div>
             
             <div class="elementmargin">
                 <asp:Label Text="Nueva Contraseña" runat="server" CssClass="ProfileInputText"/>
-                <asp:TextBox runat="server" CssClass="textAreaProfileright"/>
+                <asp:TextBox runat="server" CssClass="textAreaProfileright" ID="TextBoxNewPassw1"/>
             </div>
             
             <div class="elementmargin">
                 <asp:Label Text="Repetir nueva Contraseña" runat="server" CssClass="ProfileInputText"/>
-                <asp:TextBox runat="server" CssClass="textAreaProfileright"/>
+                <asp:TextBox runat="server" CssClass="textAreaProfileright" ID="TextBoxNewPassw2"/>
+            </div>
+            <div class="elementmargin">
+                <asp:Label Text="" runat="server" ID="LabelError" /> <br />
+                <asp:Label Text="" runat="server" ID="LabelError2" />
             </div>
     </div>
         </div>
     <div class="row mainProfileContent">
         <asp:Button ID="CloseSesion" runat="server" OnClientClick="deleteCookie();" hr Text="Cerrar Sesion" CssClass="btn btn-danger col-md-2" OnClick="CloseSesion_Click"/>
-        <asp:Button ID="SaveChanges" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary col-md-4 col-md-offset-6"/>
+        <asp:Button ID="SaveChanges" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary col-md-4 col-md-offset-6" OnClick="SaveChanges_Click"/>
     </div>
     <style>
         .imageProfile{

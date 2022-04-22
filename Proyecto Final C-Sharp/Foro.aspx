@@ -4,9 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ChildContent2" runat="server">
     <div class="testingg">
         <div class="headerForum">
-            <%--<h1>Nombre del foro</h1>--%>
             <asp:Label ID="Label1" runat="server" CssClass="titleForo"></asp:Label>
-            <asp:Button ID="ButtonJoin" runat="server" Text="Unirse" OnClick="ButtonJoin_Click" BackColor="#8888f3" Height="30px" Width="120px" CssClass="btn btn-primary clasbuton" />
         </div>
     </div>
     <div class="PageForChat">
@@ -86,14 +84,16 @@
             position: absolute;
             top: 92%;
             left: 2%;
-            width: 89%;
+            width: 88%;
             max-width: 100%;
         }
         .buttonChat{
  
                 position: absolute;
-    right: 23px;
-    bottom: 10px;
+    right: 21px;
+    bottom: 15px;
+    padding: 3px;
+    height: 25px;
         }
     </style>
 </asp:Content>

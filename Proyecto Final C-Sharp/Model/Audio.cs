@@ -13,6 +13,10 @@ namespace Proyecto_Final_C_Sharp.Model
         private int id;
         private string name, path, description;
 
+        public string Name { get => name; set => name = value; }
+        public string Path { get => path; set => path = value; }
+        public string Description { get => description; set => description = value; }
+
         //Constructors
         public Audio() { }
 

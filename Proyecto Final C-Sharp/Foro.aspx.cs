@@ -15,43 +15,54 @@ namespace Proyecto_Final_C_Sharp
         Message mensajes = new Message();
         List<Message> listaMensajes = null;
         SqlConnection connection = null;
+        User usuario = new User();
+        string Username = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             connection = DAL.DBConnection.ConnectLearnifyDB();
             listaMensajes = mensajes.Read(connection);
-            for (int i =0; i < listaMensajes.Count; i++)
+            if (Request.Cookies["myusrname"] != null) //Me guardo a cookie si existe
             {
-                if (Request.QueryString["topic"] == listaMensajes[i].Topic)
+                Username = Request.Cookies["myusrname"].Value;
+            }
+            else
+            {
+                InputForo.Enabled = false; //Medida de preaución: no poder escribir si no hay usuario en las cookies
+                Button1.Enabled = false; //También el botón
+            }
+            for (int i =0; i < listaMensajes.Count; i++) //Hago un loop por todos los mensajes
+            {
+                if (Request.QueryString["topic"] == listaMensajes[i].Topic) //Filtra por query el topic del foro
                 {
-                contenedorMensajesTest.Controls.Add(new Literal() { Text=$@"<div class='mensajeIndividual mensajeIndividualOther'>
-                <small class='nameForumPerson'>{listaMensajes[i].UserEmail}</small> - <small class='dateForumPost'>{listaMensajes[i].CreationDate}</small>
-                <div class='messageContent'>
-                    {listaMensajes[i].MessageText}
-                </div>
-            </div>" });
+                    if (Username == usuario.Find(connection, listaMensajes[i].UserEmail).Username) //Si el usuario del mensaje es el de las cookies, escribe el texto de una forma
+                    {
+                        contenedorMensajesTest.Controls.Add(new Literal() { Text = $@"<div class='mensajeIndividual mensajeIndividualUser'>
+                        <small class='nameForumPerson '>Tu</small> - <small class='dateForumPost'>{listaMensajes[i].CreationDate}</small>
+                        div class='messageContent'>
+                        {listaMensajes[i].MessageText}
+                        </div>
+                        </div>" });
+                    }
+                    else //Sino, como de otro usuario
+                    {
+                        contenedorMensajesTest.Controls.Add(new Literal() { Text=$@"<div class='mensajeIndividual mensajeIndividualOther'>
+                        <small class='nameForumPerson'>{usuario.Find(connection,listaMensajes[i].UserEmail).Username}</small> - <small class='dateForumPost'>{listaMensajes[i].CreationDate}</small>
+                        <div class='messageContent'>
+                            {listaMensajes[i].MessageText}
+                        </div>
+                        </div>" });
+                    }
                 }
             }
-            Label1.Text = $"Foro: {Request.QueryString["topic"]}";
-            SetFocus(InputForo);
-        }
-
-        protected void ButtonJoin_Click(object sender, EventArgs e)
-        {
-            if (ButtonJoin.Text == "Unirse")
-            {
-                ButtonJoin.Text = "Salir";
-                InputForo.Enabled = true;
-            }
-            else if (ButtonJoin.Text == "Salir")
-            {
-                ButtonJoin.Text = "Unirse";
-                InputForo.Enabled = false;
-            }
+            Label1.Text = $"Foro: {Request.QueryString["topic"]}"; //Cambiar el titulo del foro
+            SetFocus(InputForo); //Al hacer refresh que haga autofocus al input
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Message nuevoMensaje = new Message("prueba@psd.com", InputForo.Text, Request.QueryString["topic"]);
+            User usuario2 = new User();
+            connection = DAL.DBConnection.ConnectLearnifyDB();
+            Message nuevoMensaje = new Message(usuario2.FindUsername(connection, Request.Cookies["myusrname"].Value).Email, InputForo.Text, Request.QueryString["topic"]);
             nuevoMensaje.Insert(connection);
             Response.Redirect(Request.RawUrl);
         }
