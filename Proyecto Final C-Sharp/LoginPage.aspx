@@ -44,7 +44,8 @@
                 <input type="checkbox" class="form-check-input" id="checkCookie" runat="server"/>
                 <label class="form-check-label" for="connected">Recuerdame</label>
               </div>
-              <button id="idInicio" type="submit" onclick="Login_Submit()" class="btn btn-primary">INICIAR SESIÓN</button>
+                <asp:Label runat="server" Text="" ID="mensajeError"></asp:Label>
+                <asp:Button ID="btIniciarSesion" runat="server" EnableTheming="True" Height="46px" OnClick="btIniciarSesion_Click" Text="INICIARSESION" Width="125px" />
             </form>
           </div>
       </div>

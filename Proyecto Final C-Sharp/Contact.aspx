@@ -76,7 +76,7 @@
                     <h3 class="col-md-12 text-left">Mail de centro</h3>
                     <p>Carrer d'En Llàstics, 2, 08003 Barcelona</p>
                     <h3 class="col-md-12 text-left">Dirección</h3>
-                    <p>i.elgstrom@gmail.com</p>
+                    <p>learnify.help@gmail.com</p>
                     <h3 class="col-md-12 text-left">Teléfono</h3>
                     <p>(+34) 671-408-611</p>
                 </div>

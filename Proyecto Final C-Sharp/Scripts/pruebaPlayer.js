@@ -6,10 +6,19 @@
     var videoId = "";
     // player iframe
     const $iframe = $("iframe");
-    // input where user enters YouTube url to play
-    const $inputField = $(".inputField");
     // button to play YouTube video url entered
-    const $playButton = $(".btnPlay");
+    //const $playButton = $(".btnPlay");
+    var idsButtons = [];
+    var idsUrls = [];
+
+    var element = document.getElementById('MainContent_ChildContent2_podcastsVideos');
+    var count = element.childElementCount;
+
+    for (var i = 0; i < count; i++) {
+        idsButtons[i] = $(`#play${i}`);
+        idsUrls[i] = $(`#input-field${i}`);
+    }
+
     // overlay that video player iframe is shown
     const $overlay = $("#overlay");
     // notification that shows errors and information
@@ -47,8 +56,9 @@
     // expression to test if there are any whitespaces in our url
     const whiteSpaceRE = /\s/g;
 
+    const $inputField = $(".inputField");
+
     function getVideoURL() {
-        // gets our url from the input field
         url = $inputField.val();
         // checks if there is whitespace in the url, if there is, reassign the url to the string with the whitespace removed
         let hasWhiteSpace = whiteSpaceRE.test(url);
@@ -276,19 +286,11 @@
         }
     });
 
-    /*
-    var hijosPodcasts = document.getElementById("podcastsVideos").childElementCount;
-    for (var i = 1; i < hijosPodcasts; i++) {
-        // submit the URL form when the user clicks on the play button
-        $playButton[i].on("click", function (e) {
+    for (var i = 0; i < idsButtons.length; i++) {
+        idsButtons[i].on("click", function (e) {
             $form.submit();
         });
     }
-    */
-
-    $playButton.on("click", function (e) {
-        $form.submit();
-    });
 
     // overlay close overlay button
     $("button:contains('close')").on("click", function (e) {
