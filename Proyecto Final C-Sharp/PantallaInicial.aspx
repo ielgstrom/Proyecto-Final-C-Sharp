@@ -6,7 +6,7 @@
 <head runat="server">
 <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+    <title><%: Page.Title %>- Mi aplicación ASP.NET</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -60,6 +60,10 @@
             <button type="button" class="btn btn-primary" id="btnEntrar">
                 <a runat="server" href="~/LoginPage.aspx" style="color: white; font-family: 'HK Grotesk', sans-serif; font-weight: bold;">ENTRAR</a>
             </button>
+
+            <asp:Button ID="btEntrar" runat="server" Height="55px" OnClick="btEntrar_Click" Text="ENTRAR" Width="168px" />
+            <asp:Button ID="btRegistrarse" runat="server" Height="53px" OnClick="btRegistrarse_Click" Text="REGISTRARSE" Width="153px" />
+
         </div>
     </form>
 </body>

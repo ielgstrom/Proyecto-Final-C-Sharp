@@ -17,10 +17,29 @@ namespace Proyecto_Final_C_Sharp
         protected void Page_Load(object sender, EventArgs e)
         {
             connection = DAL.DBConnection.ConnectLearnifyDB();
-            listaTopics = mensajes.Topics(connection);
-            for (int i = 0; i < listaTopics.Count; i++)
+
+
+            if (Request.Cookies["myusername"] == null){
+                //REDIR
+                Response.Redirect("PantallaInicial.aspx");
+            }
+
+            string cookieUser = this.Request.Cookies["myusername"].Value;
+
+            User user = new User();
+            user = user.FindUsername(connection, cookieUser);
+
+            if(user == null)
             {
-                listForos.Controls.Add(new Literal() { Text = $"<a class='forosLinks' href='Foro.aspx?topic={listaTopics[i]}'>{listaTopics[i]}</a>" });
+                Response.Redirect("PantallaInicial.aspx");
+            }
+            else
+            {
+                listaTopics = mensajes.Topics(connection);
+                for (int i = 0; i < listaTopics.Count; i++)
+                {
+                    listForos.Controls.Add(new Literal() { Text = $"<a class='forosLinks' href='Foro.aspx?topic={listaTopics[i]}'>{listaTopics[i]}</a>" });
+                }
             }
         }
     }

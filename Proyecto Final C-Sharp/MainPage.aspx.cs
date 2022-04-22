@@ -16,6 +16,15 @@ namespace Proyecto_Final_C_Sharp
         SqlConnection connection = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.Cookies["myusername"] == null)
+            {
+                welcomeLabel.Text = " ";
+            }
+            else
+            {
+                welcomeLabel.Text = welcomeLabel.Text + " " + this.Request.Cookies["myusername"].Value;
+            }
+
             connection = DAL.DBConnection.ConnectLearnifyDB();
             listaAudios = audio.Read(connection);
             int i;

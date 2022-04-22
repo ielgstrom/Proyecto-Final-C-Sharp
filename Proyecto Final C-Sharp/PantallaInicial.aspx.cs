@@ -13,5 +13,15 @@ namespace Proyecto_Final_C_Sharp
         {
          
         }
+
+        protected void btEntrar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
+
+        protected void btRegistrarse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterPage.aspx");
+        }
     }
 }

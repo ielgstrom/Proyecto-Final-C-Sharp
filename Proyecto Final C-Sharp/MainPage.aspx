@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ChildContent2" runat="server">
     <script type="text/javascript" src="Scripts/pruebaPlayer.js"></script>
 
-    <h1>Bienvenido, usuario</h1>
+    <asp:Label ID="welcomeLabel" runat="server"  Text="Bienvenido," Font-Size="23"></asp:Label>
     <h2>Aqui tienes contenido que te puede interesar</h2>
     <h3>Foros que te pueden interesar</h3>
     <div class="HomePageForum">
