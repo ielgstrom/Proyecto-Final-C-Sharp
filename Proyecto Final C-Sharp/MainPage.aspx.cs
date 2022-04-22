@@ -13,14 +13,29 @@ namespace Proyecto_Final_C_Sharp
     {
         public Audio audio = new Audio();
         public List<Audio> listaAudios = null;
+        Message mensajes = new Message();
+        List<String> listaTopics = null;
         SqlConnection connection = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             connection = DAL.DBConnection.ConnectLearnifyDB();
             listaAudios = audio.Read(connection);
-            int i;
+            listaTopics = mensajes.Topics(connection);
 
-            for (i = 0; i < listaAudios.Count; i++)
+            //Aqui inicializamos los foros recomendados, y de momento recomendamos solo 6, para no incluirlos todos
+            for(int y=0; y<6; y++)
+            {
+                MainForosPanel.Controls.Add(new Literal() { Text = $@"<div class='HomePageForum'>
+                                                <a class='enlaceMainForo' href='Foro.aspx?topic={listaTopics[y]}'>
+                                                    <small>
+                                                        {listaTopics[y]}
+                                                    </small>
+                                                </a>
+                                            </div>" });
+            }
+
+
+            for (int i = 0; i < listaAudios.Count; i++)
             {
                 String url = listaAudios[i].Path;
                 int tam_var = url.Length;
