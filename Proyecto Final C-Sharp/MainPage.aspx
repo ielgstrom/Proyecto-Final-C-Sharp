@@ -6,31 +6,15 @@
     <asp:Label ID="welcomeLabel" runat="server"  Text="Bienvenido," Font-Size="23"></asp:Label>
     <h2>Aqui tienes contenido que te puede interesar</h2>
     <h3>Foros que te pueden interesar</h3>
-    <div class="HomePageForum">
-        <small>
-        Titulo del programa
-        </small>
-    </div>
-    <div class="HomePageForum">
-        <small>
-        Titulo del programa
-        </small>
-    </div>
-    <div class="HomePageForum">
-        <small>
-        Otro foro
-        </small>
-    </div>
-     <div class="HomePageForum">
-         <small>
-        Vaya foro
-        </small>
-     </div>
-    <div class="HomePageForum">
-        <small>
-        Otro mas
-        </small>
-    </div>
+    <asp:Panel ID="MainForosPanel" runat="server"></asp:Panel>
+     <%--ESTE ES UN MODELO DE COMO QUEDA LOS FOROS
+         <div class="HomePageForum">
+         <a class="enlaceMainForo" href="Foro.aspx?topic=Python">
+            <small>
+            Vaya foro
+            </small>
+         </a>
+     </div>--%>
     <h3>Podcasts que te pueden interesar</h3>
     <div class="containerPlayer">
       <div class="child">
