@@ -18,13 +18,13 @@ namespace Proyecto_Final_C_Sharp
         SqlConnection connection = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["myusername"] == null)
+            if (Request.Cookies["myusrname"] == null)
             {
                 welcomeLabel.Text = " ";
             }
             else
             {
-                welcomeLabel.Text = welcomeLabel.Text + " " + this.Request.Cookies["myusername"].Value;
+                welcomeLabel.Text = welcomeLabel.Text + " " + this.Request.Cookies["myusrname"].Value;
             }
 
             connection = DAL.DBConnection.ConnectLearnifyDB();

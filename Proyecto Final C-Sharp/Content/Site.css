@@ -55,21 +55,12 @@ textarea {
     color: white;
     font-size: 30px;
 }
-.enlaceMainForo {
-    color: #337ab7;
-    text-decoration: none;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-.enlaceMainForo:hover{
-    text-decoration:none !important;
-}
+
 .botonesPrincipal {
     margin-top: 300px;
 }
 
-#btnRegistro {
+.brRegistrarseCss {
     background-color: black;
     color: white;
     font-family: 'HK Grotesk', sans-serif;
@@ -79,7 +70,7 @@ textarea {
     margin-left: 80px;
 }
 
-#btnEntrar {
+.brEntrarCss {
     font-family: 'HK Grotesk', sans-serif;
     font-weight: bold;
     height: 35px;
@@ -125,7 +116,7 @@ textarea {
     padding: 0px 20px;
     overflow: auto;
     z-index: 0;
-    /*width: 100% !important;*/
+    width: 100% !important;
 }
 
 /*End Site Master*/

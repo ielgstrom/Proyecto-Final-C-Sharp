@@ -38,9 +38,9 @@ namespace Proyecto_Final_C_Sharp
                     }//CONTRASEÑA MAL
                     else
                     {
-                        HttpCookie myusername = new HttpCookie("myusername", username);
+                        HttpCookie myusrname = new HttpCookie("myusrname", username);
 
-                        Response.Cookies.Add(myusername);
+                        Response.Cookies.Add(myusrname);
                         Response.Redirect("MainPage.aspx");
                     }//TODO OK
                 }

@@ -14,6 +14,7 @@
 
     <webopt:bundlereference runat="server" path="~/Content" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body class="bodyPrincipal">
     <form id="form1" runat="server">
@@ -54,15 +55,8 @@
             <label class="eslogan">LEARN FROM YOUR HOME, EVERYWHERE</label>
         </div>
         <div class="botonesPrincipal">
-            <button type="button" class="btn btn-dark" id="btnRegistro">
-                <a runat="server" href="~/RegisterPage.aspx" style="color: white; font-family: 'HK Grotesk', sans-serif; font-weight: bold;">REGISTRARSE</a>
-            </button>
-            <button type="button" class="btn btn-primary" id="btnEntrar">
-                <a runat="server" href="~/LoginPage.aspx" style="color: white; font-family: 'HK Grotesk', sans-serif; font-weight: bold;">ENTRAR</a>
-            </button>
-
-            <asp:Button ID="btEntrar" runat="server" Height="55px" OnClick="btEntrar_Click" Text="ENTRAR" Width="168px" />
-            <asp:Button ID="btRegistrarse" runat="server" Height="53px" OnClick="btRegistrarse_Click" Text="REGISTRARSE" Width="153px" />
+            <asp:Button ID="btEntrar" CssClass="brEntrarCss" runat="server" Height="55px" OnClick="btEntrar_Click" Text="ENTRAR" Width="168px"  />
+            <asp:Button ID="btRegistrarse" CssClass="brRegistrarseCss" runat="server" Height="53px" OnClick="btRegistrarse_Click" Text="REGISTRARSE" Width="153px" />
 
         </div>
     </form>

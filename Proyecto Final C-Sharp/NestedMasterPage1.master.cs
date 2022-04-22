@@ -19,12 +19,12 @@ namespace Proyecto_Final_C_Sharp
             connection = DAL.DBConnection.ConnectLearnifyDB();
 
 
-            if (Request.Cookies["myusername"] == null){
+            if (Request.Cookies["myusrname"] == null){
                 //REDIR
                 Response.Redirect("PantallaInicial.aspx");
             }
 
-            string cookieUser = this.Request.Cookies["myusername"].Value;
+            string cookieUser = this.Request.Cookies["myusrname"].Value;
 
             User user = new User();
             user = user.FindUsername(connection, cookieUser);
