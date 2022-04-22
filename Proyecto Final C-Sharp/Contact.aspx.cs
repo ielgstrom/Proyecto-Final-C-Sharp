@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Proyecto_Final_C_Sharp.Model;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -13,8 +15,17 @@ namespace Proyecto_Final_C_Sharp
 {
     public partial class Contact : Page
     {
+        SqlConnection connection = null;
+        User usuario = new User();
         protected void Page_Load(object sender, EventArgs e)
         {
+            connection = DAL.DBConnection.ConnectLearnifyDB();
+            //Aqui pondremos los datos del usuario en los campos, por si ya está registrado
+            if (Request.Cookies["myusrname"] != null)
+            {
+                name.Text = usuario.FindUsername(connection, Request.Cookies["myusrname"].Value).FirstName;
+                email.Text = usuario.FindUsername(connection, Request.Cookies["myusrname"].Value).Email;
+            }
 
         }
 

@@ -43,7 +43,7 @@ namespace Proyecto_Final_C_Sharp
                         </div>
                         </div>" });
                     }
-                    else //Sino, como un mensaje generico
+                    else //Sino, como de otro usuario
                     {
                         contenedorMensajesTest.Controls.Add(new Literal() { Text=$@"<div class='mensajeIndividual mensajeIndividualOther'>
                         <small class='nameForumPerson'>{usuario.Find(connection,listaMensajes[i].UserEmail).Username}</small> - <small class='dateForumPost'>{listaMensajes[i].CreationDate}</small>
