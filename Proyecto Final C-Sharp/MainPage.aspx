@@ -6,7 +6,7 @@
     <asp:Label ID="welcomeLabel" runat="server"  Text="Bienvenido," Font-Size="23"></asp:Label>
     <h2>Aqui tienes contenido que te puede interesar</h2>
     <h3>Foros que te pueden interesar</h3>
-    <asp:Panel ID="MainForosPanel" runat="server"></asp:Panel>
+    <asp:Panel ID="mainForosPanel" runat="server"></asp:Panel>
      <%--ESTE ES UN MODELO DE COMO QUEDA LOS FOROS
          <div class="HomePageForum">
          <a class="enlaceMainForo" href="Foro.aspx?topic=Python">
@@ -16,22 +16,15 @@
          </a>
      </div>--%>
     <h3>Podcasts que te pueden interesar</h3>
+
     <div class="containerPlayer">
       <div class="child">
         <div id="main-area">
           <form action="javascript:void(0);">
           <asp:Panel runat="server" ID="podcastsVideos"></asp:Panel>
-           <%-- <div class="bar">
-              <input id="input-field" type="url"
-                  value="https://www.youtube.com/watch?v=48Ltw4R6yIA"/>
-              <img id="pruebaImg" runat="server" src="https://i.ytimg.com/vi/48Ltw4R6yIA/hqdefault.jpg" height="170" width="250"/>
-              <button class="btnPlay" id="play" title="play video url"><i class="fa fa-solid fa-play"></i></button>
-            </div>--%>
-
           </form>
         </div>
        </div>
-      </div>
     </div>
 
     <div id="overlay">
@@ -63,7 +56,7 @@
       <div id="expand-hint-text">minimized video</div>
     </div>
     <div id="shortcuts-modal" class="modal">
-      <!-- Modal content -->
+
       <div class="modal-content">
         <span
           id="close"

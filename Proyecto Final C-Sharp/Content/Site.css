@@ -284,10 +284,6 @@ textarea {
         font-weight: bold;
     }
 
-    .inputField {
-        display: none;
-    }
-
     #loader {
         margin: 0.25em;
         z-index: 9999;

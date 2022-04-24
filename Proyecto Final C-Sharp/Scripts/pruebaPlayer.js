@@ -7,17 +7,7 @@
     // player iframe
     const $iframe = $("iframe");
     // button to play YouTube video url entered
-    //const $playButton = $(".btnPlay");
-    var idsButtons = [];
-    var idsUrls = [];
-
-    var element = document.getElementById('MainContent_ChildContent2_podcastsVideos');
-    var count = element.childElementCount;
-
-    for (var i = 0; i < count; i++) {
-        idsButtons[i] = $(`#play${i}`);
-        idsUrls[i] = $(`#input-field${i}`);
-    }
+    const $playButton = $(".btnPlay");
 
     // overlay that video player iframe is shown
     const $overlay = $("#overlay");
@@ -45,10 +35,7 @@
         return JSON.parse($("#private-mode").data("enabled"));
     };
 
-    // regex
     // gets the youtube video id from strings
-    // const urlDissector =
-    // /(http(?: s) ?: \/\/(?:m.)?(?:www\.)?)?youtu(?:\.be\/|be\.com\/(?:watch\?(?:feature=youtu\.be\&)?v=|v\/|embed\/|shorts\/|user\/(?:[\w#]+\/)+))([^&#?\n]+)/gm
     // checks if the url is a valid youtube url and is something our player can play
     const urlDissector =
         /((http?(?:s)?:\/\/)?(www\.)?)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|shorts\/|v\/|watch\?v=|watch\?(?:[^&?]*?=[^&?]*)&v=))((?:\w|-){11})((?:\&|\?)\S*)?/;
@@ -56,10 +43,17 @@
     // expression to test if there are any whitespaces in our url
     const whiteSpaceRE = /\s/g;
 
-    const $inputField = $(".inputField");
+    var buttons = document.getElementsByClassName('btnPlay');
+    var idButton;
+
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function () {
+            idButton = this.id;
+        };
+    }
 
     function getVideoURL() {
-        url = $inputField.val();
+        url = document.getElementById(idButton).value
         // checks if there is whitespace in the url, if there is, reassign the url to the string with the whitespace removed
         let hasWhiteSpace = whiteSpaceRE.test(url);
         url = hasWhiteSpace ? url.replace(/\s/g, "") : url;
@@ -131,8 +125,6 @@
     // resets numerous things for the player
     function reset() {
         $iframe.attr("src", "");
-        // expandButton.disabled = true;
-        // document.querySelector("#private-mode").checked = false;
         $privateModeButton.data("enabled", false);
         $privateModeButton.attr(
             "title",
@@ -237,7 +229,6 @@
     // show the overlay whe the user clicks on the video expand thumbnail
     $expandBox.on("click", function (e) {
         $overlay.show();
-        // expandButton.disabled = "true";
         $expandBox.hide();
         $thumbnail.attr("src", "");
     });
@@ -286,11 +277,9 @@
         }
     });
 
-    for (var i = 0; i < idsButtons.length; i++) {
-        idsButtons[i].on("click", function (e) {
-            $form.submit();
-        });
-    }
+    $playButton.on("click", function (e) {
+        $form.submit();
+    });
 
     // overlay close overlay button
     $("button:contains('close')").on("click", function (e) {

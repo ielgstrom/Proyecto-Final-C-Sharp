@@ -19,13 +19,9 @@ namespace Proyecto_Final_C_Sharp
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Cookies["myusrname"] == null)
-            {
                 welcomeLabel.Text = " ";
-            }
             else
-            {
                 welcomeLabel.Text = welcomeLabel.Text + " " + this.Request.Cookies["myusrname"].Value;
-            }
 
             connection = DAL.DBConnection.ConnectLearnifyDB();
             listaAudios = audio.Read(connection);
@@ -34,7 +30,7 @@ namespace Proyecto_Final_C_Sharp
             //Aqui inicializamos los foros recomendados, y de momento recomendamos solo 6, para no incluirlos todos
             for(int y=0; y<6; y++)
             {
-                MainForosPanel.Controls.Add(new Literal() { Text = $@"<div class='HomePageForum'>
+                mainForosPanel.Controls.Add(new Literal() { Text = $@"<div class='HomePageForum'>
                                                 <a class='enlaceMainForo' href='Foro.aspx?topic={listaTopics[y]}'>
                                                     <small>
                                                         {listaTopics[y]}
@@ -43,7 +39,6 @@ namespace Proyecto_Final_C_Sharp
                                             </div>" });
             }
 
-
             for (int i = 0; i < listaAudios.Count; i++)
             {
                 String url = listaAudios[i].Path;
@@ -51,12 +46,12 @@ namespace Proyecto_Final_C_Sharp
                 String idURL = url.Substring((tam_var - 11), 11);
 
                 podcastsVideos.Controls.Add(new Literal() { Text = $@"<div class='bar'>
-                    <input class='inputField' id='input-field{i}' type='url'
-                    value='{url}'/>
                     <img id='pruebaImg' runat='server' src='https://i.ytimg.com/vi/{idURL}/hqdefault.jpg' height='170' width='250'/>
-                    <button class='btnPlay' id='play{i}' title='play video url' value='input-field{i}'><i class='fa fa-solid fa-play'></i></button>
+                    <input type='button' class='btnPlay' id='play{i}' runat='server' value='{url}'></input>
                     </div>" });
             }
+
         }
+
     }
 }
