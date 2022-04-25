@@ -9,15 +9,10 @@
     <asp:Panel ID="mainForosPanel" runat="server"></asp:Panel>
     <h3>Podcasts que te pueden interesar</h3>
 
-    <div class="containerPlayer">
-      <div class="child">
-        <div id="main-area">
-          <form action="javascript:void(0);">
-          <asp:Panel runat="server" ID="podcastsVideos"></asp:Panel>
-          </form>
-        </div>
-       </div>
-    </div>
+
+    <form action="javascript:void(0);">
+        <asp:Panel runat="server" ID="podcastsVideos"></asp:Panel>
+    </form>
 
     <div id="overlay">
       <div id="overlay-content">
