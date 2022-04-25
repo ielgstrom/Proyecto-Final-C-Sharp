@@ -88,12 +88,11 @@
             max-width: 100%;
         }
         .buttonChat{
- 
-                position: absolute;
-    right: 21px;
-    bottom: 15px;
-    padding: 3px;
-    height: 25px;
+            position: absolute;
+            padding: 3px;
+            height: 25px;
+            top: 92%;
+            right: 2%;
         }
     </style>
 </asp:Content>

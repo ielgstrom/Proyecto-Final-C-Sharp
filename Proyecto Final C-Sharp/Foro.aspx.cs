@@ -38,7 +38,7 @@ namespace Proyecto_Final_C_Sharp
                     {
                         contenedorMensajesTest.Controls.Add(new Literal() { Text = $@"<div class='mensajeIndividual mensajeIndividualUser'>
                         <small class='nameForumPerson '>Tu</small> - <small class='dateForumPost'>{listaMensajes[i].CreationDate}</small>
-                        div class='messageContent'>
+                        <div class='messageContent'>
                         {listaMensajes[i].MessageText}
                         </div>
                         </div>" });
