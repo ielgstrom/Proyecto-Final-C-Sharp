@@ -34,7 +34,7 @@ namespace Proyecto_Final_C_Sharp
                 {
                     if (user.Password != Seguridad.Encriptar(pass))
                     {
-                        mensajeError.Text = "La contraseña es incorrecta";
+                        mensajeError.Text = "Contraseña incorrecta";
                     }//CONTRASEÑA MAL
                     else
                     {

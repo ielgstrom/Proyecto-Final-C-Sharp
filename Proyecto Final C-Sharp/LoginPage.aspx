@@ -29,6 +29,10 @@
             <div class="tituloSignIn">
                 <label id="textoSignIn">INICIAR SESIÓN</label>
                 <br />
+                <label runat="server" id="subtextoSignUp">
+                    ¿No tienes cuenta?
+                    <a runat="server" href="~/RegisterPage.aspx">Crea una</a>
+                </label>
                 <hr />
             </div>
             <form class="formRegistro" runat="server">
