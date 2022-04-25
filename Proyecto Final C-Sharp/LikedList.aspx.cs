@@ -11,7 +11,11 @@ namespace Proyecto_Final_C_Sharp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.Cookies["myusrname"] == null)
+            {
+                //REDIR
+                Response.Redirect("PantallaInicial.aspx");
+            }
         }
     }
 }
