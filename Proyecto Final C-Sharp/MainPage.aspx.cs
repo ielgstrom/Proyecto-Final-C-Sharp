@@ -11,6 +11,7 @@ namespace Proyecto_Final_C_Sharp
 {
     public partial class MainPage : System.Web.UI.Page
     {
+        // variables
         public Audio audio = new Audio();
         public List<Audio> listaAudios = null;
         Message mensajes = new Message();
@@ -18,11 +19,13 @@ namespace Proyecto_Final_C_Sharp
         SqlConnection connection = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            // comprobamos que el usuario este logueado a traves de las cookies
             if (Request.Cookies["myusrname"] == null)
                 welcomeLabel.Text = " ";
             else
                 welcomeLabel.Text = welcomeLabel.Text + " " + this.Request.Cookies["myusrname"].Value;
 
+            // inicializamos variables
             connection = DAL.DBConnection.ConnectLearnifyDB();
             listaAudios = audio.Read(connection);
             listaTopics = mensajes.Topics(connection);
@@ -39,6 +42,7 @@ namespace Proyecto_Final_C_Sharp
                                             </div>" });
             }
 
+            //Aqui inicializamos los podcasts recomendados, y de momento recomendamos solo 6, para no incluirlos todos
             for (int i = 0; i < listaAudios.Count; i++)
             {
                 String url = listaAudios[i].Path;
@@ -47,7 +51,7 @@ namespace Proyecto_Final_C_Sharp
 
                 podcastsVideos.Controls.Add(new Literal() { Text = $@"<div class='bar'>
                     <img id='pruebaImg' runat='server' src='https://i.ytimg.com/vi/{idURL}/hqdefault.jpg' height='170' width='250'/>
-                    <input type='button' class='btnPlay' id='play{i}' runat='server' value='{url}'></input>
+                    <input type='button' class='btnPlay' id='play{i}' runat='server' value='{url}'><i class='fa fa-solid fa-play'></i></input>
                     </div>" });
             }
 

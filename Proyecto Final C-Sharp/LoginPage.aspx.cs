@@ -27,14 +27,14 @@ namespace Proyecto_Final_C_Sharp
 
                 if (user == null)
                 {
-                    mensajeError.Text = "El nombre de usuario ya existe, escoge otro";
+                    mensajeError.Text = "El nombre de usuario no existe, escoge otro";
                     //USER NO EXISTE
                 }
                 else
                 {
-                    if (user.Password != pass)
+                    if (user.Password != Seguridad.Encriptar(pass))
                     {
-                        mensajeError.Text = "El nombre de usuario ya existe, escoge otrox2";
+                        mensajeError.Text = "La contraseña es incorrecta";
                     }//CONTRASEÑA MAL
                     else
                     {
@@ -44,9 +44,6 @@ namespace Proyecto_Final_C_Sharp
                         Response.Redirect("MainPage.aspx");
                     }//TODO OK
                 }
-                
-                //else { lblErrorMessage.Visible = true; }
-                
             }
         }
 

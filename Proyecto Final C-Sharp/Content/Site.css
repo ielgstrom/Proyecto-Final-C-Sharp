@@ -117,6 +117,7 @@ textarea {
     overflow: auto;
     z-index: 0;
     width: 100% !important;
+    font-family: 'HK Grotesk', sans-serif;
 }
 
 /*End Site Master*/
@@ -573,3 +574,87 @@ a svg {
 }
 
 /*End menu desplegable*/
+
+/*About*/
+.profilePic {
+    height: 200px;
+    border-radius: 12%;
+}
+
+.rowAbout {
+    font-family: 'HK Grotesk', sans-serif;
+}
+/*End about*/
+
+/*NestedMasterPage*/
+
+.main {
+    /*padding-left: 180px; */
+    /* Same as the width of the sidenav */
+    height: calc(100vh - 50px);
+    /*background-color:blue;*/
+    opacity: 1;
+    background-attachment: fixed;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    opacity: 1;
+    text-align: center;
+}
+
+.downLink {
+    position: absolute;
+    top: calc(100% - 100px);
+    left: 30%;
+}
+
+a:hover {
+    color: white;
+}
+
+a.forosLinks {
+    font-size: 18px;
+}
+
+.listForos {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    /*max-height: 370px;*/
+    max-height: calc(100vh - 240px);
+}
+
+.likedlist {
+    border-bottom: 2px;
+    border-bottom-color: #ffffff3d;
+    border-bottom-style: solid;
+}
+
+.content {
+    position: absolute;
+    padding: 0px 20px;
+    overflow: auto;
+    z-index: 0;
+    width: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/*End NestedMasterPage*/

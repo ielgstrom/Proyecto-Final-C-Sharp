@@ -7,14 +7,6 @@
     <h2>Aqui tienes contenido que te puede interesar</h2>
     <h3>Foros que te pueden interesar</h3>
     <asp:Panel ID="mainForosPanel" runat="server"></asp:Panel>
-     <%--ESTE ES UN MODELO DE COMO QUEDA LOS FOROS
-         <div class="HomePageForum">
-         <a class="enlaceMainForo" href="Foro.aspx?topic=Python">
-            <small>
-            Vaya foro
-            </small>
-         </a>
-     </div>--%>
     <h3>Podcasts que te pueden interesar</h3>
 
     <div class="containerPlayer">
