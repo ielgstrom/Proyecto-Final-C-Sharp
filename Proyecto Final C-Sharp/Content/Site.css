@@ -296,21 +296,14 @@ textarea {
         height: 0.5rem;
     }
 
-    #main-area {
-        margin-top: 1rem;
-        padding: 1.4rem 1rem;
-        border-radius: 0.4rem;
-        /*background-color: #2f52c3;*/
-        /*margin-left: 7%;*/
-    }
-
     #loader-fade-text {
         animation: fade 2s ease-in infinite, rgb 5s linear infinite;
     }
 
     .bar {
-        display: flex;
-        margin-right: 5%;
+        margin-right: 20px;
+        display: inline-flex;
+        margin-bottom: 20px;
     }
 
     .overlay-buttons {
@@ -354,19 +347,6 @@ textarea {
         color: white;
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
-    }
-
-    .containerPlayer {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        margin: auto;
-    }
-
-    .child {
-        /* Center vertically */
-        position: absolute;
-        top: 50%;
     }
 
     #expand-box {
@@ -487,22 +467,16 @@ textarea {
         color: black;
     }
 
-    .bar .btnPlay {
+    .btnPlay {
         position: absolute;
-        top: 50%;
-        margin-left: 17%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: rgba(0,0,0,0.9);
-        color: white;
+        top: 48%;
         padding: 12px 24px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
+        height: 26%;
     }
 
     #MainContent_ChildContent2_podcastsVideos {
-        display: flex;
+        display: block;
+        padding: 1.4rem 1rem;
     }
 
     .bar .btnPlay:hover {
@@ -640,12 +614,13 @@ a.forosLinks {
     border-bottom-style: solid;
 }
 
-.content {
+.contentNested {
     position: absolute;
     padding: 0px 20px;
     overflow: auto;
     z-index: 0;
     width: auto;
+    margin: 20px;
 }
 
 ::-webkit-scrollbar {

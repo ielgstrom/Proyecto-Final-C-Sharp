@@ -43,7 +43,7 @@ namespace Proyecto_Final_C_Sharp
             }
 
             //Aqui inicializamos los podcasts recomendados, y de momento recomendamos solo 6, para no incluirlos todos
-            for (int i = 0; i < listaAudios.Count; i++)
+            for (int i = 0; i < 6; i++)
             {
                 String url = listaAudios[i].Path;
                 int tam_var = url.Length;
@@ -51,7 +51,7 @@ namespace Proyecto_Final_C_Sharp
 
                 podcastsVideos.Controls.Add(new Literal() { Text = $@"<div class='bar'>
                     <img id='pruebaImg' runat='server' src='https://i.ytimg.com/vi/{idURL}/hqdefault.jpg' height='170' width='250'/>
-                    <input type='button' class='btnPlay' id='play{i}' runat='server' value='{url}'><i class='fa fa-solid fa-play'></i></input>
+                    <input type='button' class='btnPlay' id='play{i}' runat='server' value='{url}' style='opacity: 0'></input>
                     </div>" });
             }
 

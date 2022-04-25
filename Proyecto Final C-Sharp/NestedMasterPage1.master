@@ -5,9 +5,8 @@
         background-image: url("Imagenes/background.jpg");
         content: " ";
         display: block;
-        position: absolute;
         left: 0;
-        top: 0;
+        position: absolute;
         width: 100%;
         height: 100%;
         opacity: 0.4;
@@ -22,11 +21,11 @@
         <div class="listForos">
             <asp:Panel CssClass="listForos" ID="listForos" runat="server"></asp:Panel>
         </div>
-      <a class="downLink"  href="Perfil.aspx">Perfil</a>
+      <a class="downLink" href="Perfil.aspx">Perfil</a>
     </div>
 
    <div class="main">
-       <div class="content">
+       <div class="contentNested">
            <asp:ContentPlaceHolder ID="ChildContent2" runat="server"/>
        </div>
    </div>
