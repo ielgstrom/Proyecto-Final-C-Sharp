@@ -55,9 +55,8 @@
             <label class="eslogan">LEARN FROM YOUR HOME, EVERYWHERE</label>
         </div>
         <div class="botonesPrincipal">
-            <asp:Button ID="btEntrar" CssClass="brEntrarCss" runat="server" Height="55px" OnClick="btEntrar_Click" Text="ENTRAR" Width="168px"  />
-            <asp:Button ID="btRegistrarse" CssClass="brRegistrarseCss" runat="server" Height="53px" OnClick="btRegistrarse_Click" Text="REGISTRARSE" Width="153px" />
-
+            <asp:Button ID="btRegistrarse" CssClass="brRegistrarseCss" runat="server" Height="53px" OnClick="btRegistrarse_Click" Text="REGISTRARSE" Width="168px"/>
+            <asp:Button ID="btEntrar" CssClass="brEntrarCss" runat="server" Height="55px" OnClick="btEntrar_Click" Text="ENTRAR" Width="153px"/>
         </div>
     </form>
 </body>
