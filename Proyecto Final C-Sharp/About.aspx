@@ -13,10 +13,10 @@
     <br />
     <div class="row">
         <div class="col-md-3">
-            <center><h4>Nombre y apellidos</h4> <br />
-            <img src="" alt="profilePic" class="profilePic"/> <br /><br />
-            <p> Algo sobre cada uno</p> <br />
-            <a href=""><img src="./Imagenes/linkedInIcon.png" alt="linkedInIcon" style="width:50px;height:50px;"/></a></center>
+            <center><h4>Elvis Lara</h4> <br />
+            <img src="./Imagenes/foto_elvis.png" alt="profilePic" class="profilePic"/> <br /><br />
+            <p> Apasionado de la programación y de las nuevas tecnologías. Enfocado a la resolución de problemas, atención a los detalles y buena gestión de tiempo. Desarrollando aplicaciones moviles y web .</p> <br />
+            <a href="https://www.linkedin.com/in/elvislara/"><img src="./Imagenes/linkedInIcon.png" alt="linkedInIcon" style="width:50px;height:50px;"/></a></center>
         </div>
         <div class="col-md-3">
             <center><h4>Nombre y apellidos</h4> <br />

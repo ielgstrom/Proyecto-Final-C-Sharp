@@ -67,14 +67,18 @@ textarea {
     font-weight: bold;
     height: 35px;
     width: 140px;
+    border: none;
     margin-left: 80px;
 }
 
 .brEntrarCss {
+    background-color: midnightblue;
+    color: white;
     font-family: 'HK Grotesk', sans-serif;
     font-weight: bold;
     height: 35px;
     width: 140px;
+    border: none;
     margin-left: 20px;
 }
 

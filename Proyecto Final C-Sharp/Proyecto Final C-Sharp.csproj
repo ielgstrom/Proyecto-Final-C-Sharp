@@ -123,6 +123,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Imagenes\foto_elvis.png" />
     <Content Include="Imagenes\foto_msanuyt.jpg" />
     <Content Include="Imagenes\icons8-pause-60.png" />
     <Content Include="Imagenes\icons8-play-60.png" />
