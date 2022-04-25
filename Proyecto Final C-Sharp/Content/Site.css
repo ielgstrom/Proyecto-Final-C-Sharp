@@ -82,6 +82,18 @@ textarea {
     margin-left: 20px;
 }
 
+.brLoguear {
+    background-color: midnightblue;
+    color: white;
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: bold;
+    height: 35px;
+    width: 140px;
+    border: none;
+    margin-top: 35px;
+    margin-left: 80px;
+}
+
 .bodyPrincipal {
     background-image: url("/Imagenes/fondoPantalla.jpg");
     background-size: cover;
