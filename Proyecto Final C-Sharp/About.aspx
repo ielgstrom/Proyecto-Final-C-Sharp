@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-3">
             <center><h4>Ignasi Elgström Puyuelo</h4> <br />
-            <img src="" alt="profilePic" class="profilePic"/> <br /><br />
+            <img src="Imagenes/foto_ignasi.jpeg" alt="profilePic" class="profilePic"/> <br /><br />
             <p> Soy un fisico especializado en programacion web, con conocimiento en teconologias, de C#, JS, React, Node entre otros. Me defino por mi inquietud por aprender y mis ganas de automejora</p> <br />
             <a href="https://es.linkedin.com/in/ignasi-elgstr%C3%B6m"><img src="./Imagenes/linkedInIcon.png" alt="linkedInIcon" style="width:50px;height:50px;"/></a></center>
         </div>
