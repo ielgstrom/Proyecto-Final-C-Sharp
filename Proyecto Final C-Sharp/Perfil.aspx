@@ -38,7 +38,7 @@
     </div>
         </div>
     <div class="row mainProfileContent">
-        <asp:Button ID="CloseSesion" runat="server" OnClientClick="deleteCookie();" hr Text="Cerrar Sesion" CssClass="btn btn-danger col-md-2" OnClick="CloseSesion_Click"/>
+        <asp:Button ID="CloseSesion" runat="server" OnClientClick="deleteCookie();" hr Text="Cerrar Sesion" CssClass="btn btn-danger col-md-2" OnClick="CloseSesion_Click" CausesValidation="False" />
         <asp:Button ID="SaveChanges" runat="server" Text="Guardar Cambios" CssClass="btn btn-primary col-md-4 col-md-offset-6" OnClick="SaveChanges_Click"/>
     </div>
     <style>

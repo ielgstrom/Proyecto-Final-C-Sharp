@@ -1,16 +1,6 @@
 function Login_Submit()
 {
     createCookie();
-    onCookie();
-}
-
-function onCookie(){    
-    document.getElementById('idRegistro').innerHTML = "CERRAR SESIÓN";
-    document.getElementById('idRegistro').removeAttribute("data-bs-whatever");
-    document.getElementById('idRegistro').removeAttribute("data-bs-target");
-    document.getElementById('idRegistro').removeAttribute("data-bs-toggle");
-    document.getElementById('idRegistro').setAttribute("onclick", "deleteCookie()");
-
 }
 
 function createCookie()
@@ -27,11 +17,6 @@ function setcookie(){
 
 function deleteCookie()
 {
-	deleteCookieElvis();
-	checkCookie();
-}
-
-function deleteCookieElvis(){
     var user = getCookie('myusrname');
     var passw = getCookie('mypswd');
 
@@ -41,31 +26,6 @@ function deleteCookieElvis(){
     document.cookie.value;
 }
 
-function checkCookie()
-{
-    if (!loadingContent())
-    {
-        
-	window.location.href = "https://grupo2fundaesplai.000webhostapp.com/index.html";
-    }
-    else
-    {
-        //TO DO: alargar la vida de la cookie
-		
-    }
-}
-
-function loadingContent()
-{
-	
-    //TO DO: verificar si existe la cookie
-	if (getCookie("myusrname") != ""){
-		    return true;
-	} else {
-		return false;
-	}
-
-}
 
 function getcookiedata(){
     console.log(document.cookie);

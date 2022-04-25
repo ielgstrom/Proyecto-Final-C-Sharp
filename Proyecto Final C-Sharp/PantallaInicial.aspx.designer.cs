@@ -24,15 +24,6 @@ namespace Proyecto_Final_C_Sharp
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control btEntrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btEntrar;
-
-        /// <summary>
         /// Control btRegistrarse.
         /// </summary>
         /// <remarks>
@@ -40,5 +31,14 @@ namespace Proyecto_Final_C_Sharp
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btRegistrarse;
+
+        /// <summary>
+        /// Control btEntrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btEntrar;
     }
 }
