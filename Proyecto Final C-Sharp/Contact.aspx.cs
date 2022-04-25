@@ -20,11 +20,14 @@ namespace Proyecto_Final_C_Sharp
         protected void Page_Load(object sender, EventArgs e)
         {
             connection = DAL.DBConnection.ConnectLearnifyDB();
-            //Aqui pondremos los datos del usuario en los campos, por si ya está registrado
-            if (Request.Cookies["myusrname"] != null)
+            if(!Page.IsPostBack)
             {
-                name.Text = usuario.FindUsername(connection, Request.Cookies["myusrname"].Value).FirstName;
-                email.Text = usuario.FindUsername(connection, Request.Cookies["myusrname"].Value).Email;
+            //Aqui pondremos los datos del usuario en los campos, por si ya está registrado
+                if (Request.Cookies["myusrname"] != null)
+                {
+                    name.Text = usuario.FindUsername(connection, Request.Cookies["myusrname"].Value).FirstName;
+                    email.Text = usuario.FindUsername(connection, Request.Cookies["myusrname"].Value).Email;
+                }
             }
 
         }
