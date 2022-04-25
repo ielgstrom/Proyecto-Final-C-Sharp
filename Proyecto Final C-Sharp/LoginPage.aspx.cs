@@ -27,14 +27,14 @@ namespace Proyecto_Final_C_Sharp
 
                 if (user == null)
                 {
-                    mensajeError.Text = "El nombre de usuario ya existe, escoge otro";
+                    mensajeError.Text = "El usuario no existe";
                     //USER NO EXISTE
                 }
                 else
                 {
                     if (user.Password != pass)
                     {
-                        mensajeError.Text = "El nombre de usuario ya existe, escoge otrox2";
+                        mensajeError.Text = "Contraseña incorrecta";
                     }//CONTRASEÑA MAL
                     else
                     {

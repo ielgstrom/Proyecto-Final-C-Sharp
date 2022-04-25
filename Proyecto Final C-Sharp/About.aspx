@@ -33,7 +33,7 @@
         <div class="col-md-3">
             <center><h4>Miquel Sanuy Trullàs</h4> <br />
             <img src="./Imagenes/foto_msanuyt.jpg" alt="profilePic" class="profilePic"/> <br /><br />
-            <p> Algo sobre cada uno: aqui ira un texto que aun no me he pensado</p> <br />
+            <p> Estudié ingenieria informática y estoy aprendiendo desarrollo web. Me considero una persona paciente, crítica y comprometida.</p> <br />
             <a href="https://www.linkedin.com/in/msanuyt/"><img src="./Imagenes/linkedInIcon.png" alt="linkedInIcon" style="width:50px;height:50px;"/></a></center>
         </div>
     </div>
