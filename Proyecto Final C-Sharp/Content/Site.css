@@ -3,6 +3,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 0;
+    color: white;
 }
 
 /* Wrapping element */
@@ -593,7 +594,7 @@ a svg {
     /*padding-left: 180px; */
     /* Same as the width of the sidenav */
     height: calc(100vh - 50px);
-    /*background-color:blue;*/
+    background-color:#000;
     opacity: 1;
     background-attachment: fixed;
 }

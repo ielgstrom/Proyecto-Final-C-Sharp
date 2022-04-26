@@ -46,6 +46,7 @@
             border-radius: 5px;
             margin-top: 7px;
             margin-bottom: 7px;
+            color:black;
         }
         .mensajeIndividualOther{
             margin-right:auto;
@@ -93,6 +94,7 @@
             height: 25px;
             top: 92%;
             right: 2%;
+            color:black;
         }
     </style>
 </asp:Content>
