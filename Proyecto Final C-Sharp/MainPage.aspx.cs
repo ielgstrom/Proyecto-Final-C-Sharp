@@ -35,7 +35,7 @@ namespace Proyecto_Final_C_Sharp
             {
                 mainForosPanel.Controls.Add(new Literal() { Text = $@"<div class='HomePageForum'>
                                                 <a class='enlaceMainForo' href='Foro.aspx?topic={listaTopics[y]}'>
-                                                    <small>
+                                                    <small style='color:white'>
                                                         {listaTopics[y]}
                                                     </small>
                                                 </a>
