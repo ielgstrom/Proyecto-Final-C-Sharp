@@ -6,6 +6,10 @@ body {
     color: white;
 }
 
+label {
+    color: black;
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -20,7 +24,9 @@ textarea {
     max-width: 280px;
 }
 
-
+.inputChat {
+    color: black;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
@@ -549,6 +555,7 @@ textarea {
         transition: margin-left .5s;
         overflow: hidden;
         width: 100%;
+        color: black;
     }
 
     .topnav a {
@@ -588,13 +595,20 @@ a svg {
 }
 /*End about*/
 
-/*NestedMasterPage*/
+/*Contact*/
+.rowCon {
+    color: black;
+}
 
+.rowContact {
+    color: black;
+}
+/*NestedMasterPage*/
 .main {
     /*padding-left: 180px; */
     /* Same as the width of the sidenav */
     height: calc(100vh - 50px);
-    background-color:#000;
+    background-color: #000;
     opacity: 1;
     background-attachment: fixed;
 }
@@ -645,6 +659,7 @@ a.forosLinks {
     z-index: 0;
     width: auto;
     margin: 20px;
+    color: white;
 }
 
 ::-webkit-scrollbar {
