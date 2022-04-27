@@ -49,7 +49,7 @@
      <div class="container-fluid contact">
         <div class="row  m-5">
             <div class="col-md-5 elemCenter">
-                <div class="row">
+                <div class="rowCon">
                     <h2 class="col-md-12 text-center">Contacto</h2>
                         <div class="form-group mb-3">
                           <label for="Name">Nombre</label>
@@ -71,7 +71,7 @@
             </div>
   
             <div class="col-md-6 elemCenter2">
-                <div class="row">
+                <div class="rowContact">
                     <h2 class="my-4 col-md-12 text-center">Nuestros datos de contacto</h2>
                     <h3 class="col-md-12 text-left">Mail de centro</h3>
                     <p>Carrer d'En Llàstics, 2, 08003 Barcelona</p>

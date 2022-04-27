@@ -37,8 +37,8 @@
             </div>
             <form class="formRegistro" runat="server">
               <div class="form-group">
-                <label for="inputEmail">Nombre Usuario</label>
-                <input type="text" class="form-control" id="IdUsername" placeholder="usuarioExample" runat="server"/>
+                <label for="inputEmail">Usuario</label>
+                <input type="text" class="form-control" id="IdUsername" placeholder="Escriba su usuario" runat="server"/>
               </div>
               <div class="form-group">
                 <label for="inputContra">Contraseña</label>
@@ -47,9 +47,10 @@
               <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="checkCookie" runat="server"/>
                 <label class="form-check-label" for="connected">Recuerdame</label>
-              </div>
+                 <br />
                 <asp:Label runat="server" Text="" ID="mensajeError"></asp:Label>
-                <asp:Button ID="btIniciarSesion" runat="server" EnableTheming="True" Height="46px" OnClick="btIniciarSesion_Click" Text="INICIARSESION" Width="125px" />
+              </div>
+                <asp:Button ID="btIniciarSesion" runat="server" CssClass="brLoguear" Height="46px" OnClick="btIniciarSesion_Click" Text="INICIAR SESION" Width="125px" />
             </form>
           </div>
       </div>

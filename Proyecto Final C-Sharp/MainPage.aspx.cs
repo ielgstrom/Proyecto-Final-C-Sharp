@@ -35,7 +35,7 @@ namespace Proyecto_Final_C_Sharp
             {
                 mainForosPanel.Controls.Add(new Literal() { Text = $@"<div class='HomePageForum'>
                                                 <a class='enlaceMainForo' href='Foro.aspx?topic={listaTopics[y]}'>
-                                                    <small>
+                                                    <small style='color:white'>
                                                         {listaTopics[y]}
                                                     </small>
                                                 </a>
@@ -43,7 +43,7 @@ namespace Proyecto_Final_C_Sharp
             }
 
             //Aqui inicializamos los podcasts recomendados, y de momento recomendamos solo 6, para no incluirlos todos
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 8; i++)
             {
                 String url = listaAudios[i].Path;
                 int tam_var = url.Length;
